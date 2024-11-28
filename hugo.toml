@@ -1,0 +1,26 @@
+baseURL = 'https://cheshireviolet.github.io/'
+languageCode = "pt-BR"
+title = 'violeta'
+theme = "hugo-bearcub"
+contentDir = "content"
+
+[markup]
+  [markup.highlight]
+    lineNos = true
+    lineNumbersInTable = false
+    noClasses = false
+
+[params]
+	description = "blog da ceci"
+	favicon = "images/favicon.png"
+	title = "violeta"
+	dateFormat = "02-01-2006"
+	themeStyle = "original"
+	
+[params.social]
+	bluesky = "infernity"
+	
+[params.author]
+	name = "Cecília Takeda"
+	
+	
