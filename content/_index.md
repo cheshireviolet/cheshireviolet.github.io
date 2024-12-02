@@ -8,7 +8,7 @@ weight: 1
 
 > Pra trás, nem pra pegar impulso
 >
-> --- Giovanni
+> --- Giovanni Yuji
 
 Provavelmente foi um dos conselhos mais vagos que já recebi, mas de longe o mais importante.
 
