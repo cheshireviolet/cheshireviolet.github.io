@@ -1,20 +1,121 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>violeta</title>
-    <link>https://cheshireviolet.github.io/</link>
-    <description>Recent content on violeta</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>pt-BR</language>
-    <lastBuildDate>Mon, 02 Dec 2024 01:50:58 -0300</lastBuildDate>
-    <atom:link href="https://cheshireviolet.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Leetcode 128. Longest Consecutive Sequence</title>
-      <link>https://cheshireviolet.github.io/blog/second/</link>
-      <pubDate>Mon, 02 Dec 2024 01:50:58 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/blog/second/</guid>
-      <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;&#xA;&lt;p&gt;Recentemente eu comecei a fazer os desafios do leetcode criado como &lt;a href=&#34;https://leetcode.com/studyplan/top-interview-150/&#34;&gt;problemas de entrevistas da FAANG&lt;/a&gt;, tanto pra refrescar noções de estruturas de dados quanto para praticar python, já que de modo geral por mim faço tudo em C#.&lt;/p&gt;&#xA;&lt;p&gt;Aproveitar a introdução para agradecer a &lt;a href=&#34;https://navendu.me/posts/adding-diagrams-to-your-hugo-blog-with-mermaid/&#34;&gt;este post&lt;/a&gt; pelo tutorial de como implementar mermaid em um fórum feito em hugo, graças ao post não precisei desenhar as árvores, e sim usar markdown :D&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<h2 id="intro">Intro</h2>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://cheshireviolet.github.io/images/favicon.png" />
+<title>Leetcode 128. Longest Consecutive Sequence | violeta</title>
+<meta name="title" content="Leetcode 128. Longest Consecutive Sequence" />
+<meta name="description" content="Intro
+Recentemente eu comecei a fazer os desafios do leetcode criado como problemas de entrevistas da FAANG, tanto pra refrescar noções de estruturas de dados quanto para praticar python, já que de modo geral por mim faço tudo em C#.
+Aproveitar a introdução para agradecer a este post pelo tutorial de como implementar mermaid em um fórum feito em hugo, graças ao post não precisei desenhar as árvores, e sim usar markdown :D" />
+<meta name="author" content="" />
+<meta name="keywords" content="Leetcode,Python,Data Structure," />
+
+
+
+
+
+
+  
+  <meta property="og:url" content="https://cheshireviolet.github.io/blog/second/">
+  <meta property="og:site_name" content="violeta">
+  <meta property="og:title" content="Leetcode 128. Longest Consecutive Sequence">
+  <meta property="og:description" content="Intro Recentemente eu comecei a fazer os desafios do leetcode criado como problemas de entrevistas da FAANG, tanto pra refrescar noções de estruturas de dados quanto para praticar python, já que de modo geral por mim faço tudo em C#.
+Aproveitar a introdução para agradecer a este post pelo tutorial de como implementar mermaid em um fórum feito em hugo, graças ao post não precisei desenhar as árvores, e sim usar markdown :D">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2024-12-02T01:50:58-03:00">
+    <meta property="article:modified_time" content="2024-12-02T01:50:58-03:00">
+    <meta property="article:tag" content="Leetcode">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Data Structure">
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Leetcode 128. Longest Consecutive Sequence">
+  <meta name="twitter:description" content="Intro Recentemente eu comecei a fazer os desafios do leetcode criado como problemas de entrevistas da FAANG, tanto pra refrescar noções de estruturas de dados quanto para praticar python, já que de modo geral por mim faço tudo em C#.
+Aproveitar a introdução para agradecer a este post pelo tutorial de como implementar mermaid em um fórum feito em hugo, graças ao post não precisei desenhar as árvores, e sim usar markdown :D">
+
+
+  
+  
+  <meta itemprop="name" content="Leetcode 128. Longest Consecutive Sequence">
+  <meta itemprop="description" content="Intro Recentemente eu comecei a fazer os desafios do leetcode criado como problemas de entrevistas da FAANG, tanto pra refrescar noções de estruturas de dados quanto para praticar python, já que de modo geral por mim faço tudo em C#.
+Aproveitar a introdução para agradecer a este post pelo tutorial de como implementar mermaid em um fórum feito em hugo, graças ao post não precisei desenhar as árvores, e sim usar markdown :D">
+  <meta itemprop="datePublished" content="2024-12-02T01:50:58-03:00">
+  <meta itemprop="dateModified" content="2024-12-02T01:50:58-03:00">
+  <meta itemprop="wordCount" content="792">
+  <meta itemprop="keywords" content="Leetcode,Python,Data Structure">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+    
+    <link href="/syntax.min.css" rel="stylesheet">
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>violeta</h1></a>
+<nav>
+  <a href="/">Home</a>
+
+  <a href="/blog/">Blog</a>
+
+<a href='https://cheshireviolet.github.io/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Leetcode 128. Longest Consecutive Sequence</h1>
+<p class="byline">
+  <time datetime='2024-12-02' pubdate>
+    02-12-2024
+  </time>
+  
+</p>
+<div class="post-content">
+    
+    
+    <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+    
+</div>
+
+<content>
+  <h2 id="intro">Intro</h2>
 <p>Recentemente eu comecei a fazer os desafios do leetcode criado como <a href="https://leetcode.com/studyplan/top-interview-150/">problemas de entrevistas da FAANG</a>, tanto pra refrescar noções de estruturas de dados quanto para praticar python, já que de modo geral por mim faço tudo em C#.</p>
 <p>Aproveitar a introdução para agradecer a <a href="https://navendu.me/posts/adding-diagrams-to-your-hugo-blog-with-mermaid/">este post</a> pelo tutorial de como implementar mermaid em um fórum feito em hugo, graças ao post não precisei desenhar as árvores, e sim usar markdown :D</p>
 <h2 id="o-problema-da-vez">O problema da vez</h2>
@@ -155,20 +256,27 @@ Também adicionamos no dicionário de sequencias, sua sequencia sendo 1.</p>
 </span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">return</span> <span class="n">longest</span></span></span></code></pre></div><h2 id="conclusão">Conclusão</h2>
 <p>Sinto que realizei algum teste de entrevista que tinha um problema parecido, ou que pelo menos eu poderia ter usado Union Find pra chegar em uma solução mais eficiente.</p>
 <p>Após uma pesquisada, realmente é algo que é visto com certa frequência em entrevistas, então vale muito a pena dar uma olhada e brincar!</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>O primeiro post é sempre o mais confuso</title>
-      <link>https://cheshireviolet.github.io/blog/first/</link>
-      <pubDate>Wed, 27 Nov 2024 20:35:43 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/blog/first/</guid>
-      <description>&lt;p&gt;Bom, vamo lá né. Primeiro post é sempre complicado, você tem que se apresentar, mas já tem uma micro apresentação na página inicial. Palavras são difíceis, porque introdução nunca é o que você realmente quer falar sobre.&lt;/p&gt;&#xA;&lt;p&gt;A ideia de criar esse blog surgiu da vontade de falar sobre meus projetos, porém fora do padrão microblogging. Às vezes você tem uma idéia muito boa porém despedaçar em mini posts e futuramente perder tudo é&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;chato.&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p>Bom, vamo lá né. Primeiro post é sempre complicado, você tem que se apresentar, mas já tem uma micro apresentação na página inicial. Palavras são difíceis, porque introdução nunca é o que você realmente quer falar sobre.</p>
-<p>A ideia de criar esse blog surgiu da vontade de falar sobre meus projetos, porém fora do padrão microblogging. Às vezes você tem uma idéia muito boa porém despedaçar em mini posts e futuramente perder tudo é&hellip;&hellip;&hellip;&hellip;chato.</p>
-<p>Ao mesmo tempo tenho trabalhado em formas de manter o foco e observar meu progresso, e um blog é exatamente isso.</p>
-<p>Também é <del>, em teoria,</del> uma forma de espalhar conhecimento adiante. Nunca se sabe quando alguém do nada acha um post seu com uma solução para um problema.</p>
-<p>Enfim, não faço ideia do quão longe esse blog vai, mas é mais um passo pra frente.</p>
-]]></content:encoded>
-    </item>
-  </channel>
-</rss>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/tags/leetcode/">#leetcode</a>
+  
+    <a class="blog-tags" href="/tags/python/">#python</a>
+  
+    <a class="blog-tags" href="/tags/data-structure/">#data structure</a>
+  
+</p>
+
+
+
+
+  </main>
+  <footer><small>
+   | 
+</small></footer>
+
+    
+</body>
+
+</html>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>violeta</title>
-    <link>https://cheshireviolet.github.io/</link>
-    <description>Recent content on violeta</description>
+    <title>Leetcode on violeta</title>
+    <link>https://cheshireviolet.github.io/tags/leetcode/</link>
+    <description>Recent content in Leetcode on violeta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Mon, 02 Dec 2024 01:50:58 -0300</lastBuildDate>
-    <atom:link href="https://cheshireviolet.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cheshireviolet.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Leetcode 128. Longest Consecutive Sequence</title>
       <link>https://cheshireviolet.github.io/blog/second/</link>
@@ -155,19 +155,6 @@ Também adicionamos no dicionário de sequencias, sua sequencia sendo 1.</p>
 </span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">return</span> <span class="n">longest</span></span></span></code></pre></div><h2 id="conclusão">Conclusão</h2>
 <p>Sinto que realizei algum teste de entrevista que tinha um problema parecido, ou que pelo menos eu poderia ter usado Union Find pra chegar em uma solução mais eficiente.</p>
 <p>Após uma pesquisada, realmente é algo que é visto com certa frequência em entrevistas, então vale muito a pena dar uma olhada e brincar!</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>O primeiro post é sempre o mais confuso</title>
-      <link>https://cheshireviolet.github.io/blog/first/</link>
-      <pubDate>Wed, 27 Nov 2024 20:35:43 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/blog/first/</guid>
-      <description>&lt;p&gt;Bom, vamo lá né. Primeiro post é sempre complicado, você tem que se apresentar, mas já tem uma micro apresentação na página inicial. Palavras são difíceis, porque introdução nunca é o que você realmente quer falar sobre.&lt;/p&gt;&#xA;&lt;p&gt;A ideia de criar esse blog surgiu da vontade de falar sobre meus projetos, porém fora do padrão microblogging. Às vezes você tem uma idéia muito boa porém despedaçar em mini posts e futuramente perder tudo é&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;chato.&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p>Bom, vamo lá né. Primeiro post é sempre complicado, você tem que se apresentar, mas já tem uma micro apresentação na página inicial. Palavras são difíceis, porque introdução nunca é o que você realmente quer falar sobre.</p>
-<p>A ideia de criar esse blog surgiu da vontade de falar sobre meus projetos, porém fora do padrão microblogging. Às vezes você tem uma idéia muito boa porém despedaçar em mini posts e futuramente perder tudo é&hellip;&hellip;&hellip;&hellip;chato.</p>
-<p>Ao mesmo tempo tenho trabalhado em formas de manter o foco e observar meu progresso, e um blog é exatamente isso.</p>
-<p>Também é <del>, em teoria,</del> uma forma de espalhar conhecimento adiante. Nunca se sabe quando alguém do nada acha um post seu com uma solução para um problema.</p>
-<p>Enfim, não faço ideia do quão longe esse blog vai, mas é mais um passo pra frente.</p>
 ]]></content:encoded>
     </item>
   </channel>

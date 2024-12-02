@@ -16,11 +16,12 @@ contentDir = "content"
 	title = "violeta"
 	dateFormat = "02-01-2006"
 	themeStyle = "original"
+[params.mermaid]
+		theme = "dark"
+		align = "center"
 	
 [params.social]
 	bluesky = "infernity"
 	
 [params.author]
 	name = "Cecília Takeda"
-	
-	
