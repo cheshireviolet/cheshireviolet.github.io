@@ -2,7 +2,7 @@
 date = '2024-12-02T01:50:58-03:00'
 draft = false
 title = 'Leetcode 128. Longest Consecutive Sequence'
-tags = ['Leetcode', 'Python', 'Data Structure']
+tags = ['Leetcode', 'Python']
 mermaid = true
 +++
 

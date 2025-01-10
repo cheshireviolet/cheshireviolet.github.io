@@ -2,7 +2,7 @@
 date = '2024-12-03T01:43:07-03:00'
 draft = false
 title = 'Compilando a Darknet no Windows 10 e treinando modelo com a YOLOv3'
-tags = ['Machine Learning', 'YOLOv3', 'COCO Dataset', 'Darknet']
+tags = ['Machine Learning']
 +++
 
 ## Introdução
