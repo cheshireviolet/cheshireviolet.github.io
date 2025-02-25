@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://cheshireviolet.github.io/images/favicon.png" />
+<title>Project Mono Parte 1 - Fiquei Maluca | violeta</title>
+<meta name="title" content="Project Mono Parte 1 - Fiquei Maluca" />
+<meta name="description" content="Bom dia amigos, espero que todos estejam bem! Estive trabalhando no Choncho Adventure enquanto aprendo Pixel Art, fazendo entrevistas de emprego e tentando relaxar. Passei em uma vaga de dados, começo mês que vem! Ai que saudades de um excelzinho!
+Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a parte 1 de minha saga em engenharia reversa.
+Scripts, AutoHotKey e Preguiça
+Lá por 2013~2014 conheci o joguinho Clicker Heroes, na Steam. Fiquei viciada e isso mudou drasticamente minha vida, desde então sempre estou jogando algum jogo Incremental ou Idle. Nessa época, acabei encontrando um Script para AutoHotKey, que fazia prestígios no jogo de forma automática, em loop. Extremamente prático, salvou muito tempo da minha vida." />
+<meta name="author" content="" />
+<meta name="keywords" content="Reverse Engineering,Project Mono," />
+
+
+
+
+
+
+  
+  <meta property="og:url" content="https://cheshireviolet.github.io/blog/fifth/">
+  <meta property="og:site_name" content="violeta">
+  <meta property="og:title" content="Project Mono Parte 1 - Fiquei Maluca">
+  <meta property="og:description" content="Bom dia amigos, espero que todos estejam bem! Estive trabalhando no Choncho Adventure enquanto aprendo Pixel Art, fazendo entrevistas de emprego e tentando relaxar. Passei em uma vaga de dados, começo mês que vem! Ai que saudades de um excelzinho! Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a parte 1 de minha saga em engenharia reversa.
+Scripts, AutoHotKey e Preguiça Lá por 2013~2014 conheci o joguinho Clicker Heroes, na Steam. Fiquei viciada e isso mudou drasticamente minha vida, desde então sempre estou jogando algum jogo Incremental ou Idle. Nessa época, acabei encontrando um Script para AutoHotKey, que fazia prestígios no jogo de forma automática, em loop. Extremamente prático, salvou muito tempo da minha vida.">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-02-25T16:50:27-03:00">
+    <meta property="article:modified_time" content="2025-02-25T16:50:27-03:00">
+    <meta property="article:tag" content="Reverse Engineering">
+    <meta property="article:tag" content="Project Mono">
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Project Mono Parte 1 - Fiquei Maluca">
+  <meta name="twitter:description" content="Bom dia amigos, espero que todos estejam bem! Estive trabalhando no Choncho Adventure enquanto aprendo Pixel Art, fazendo entrevistas de emprego e tentando relaxar. Passei em uma vaga de dados, começo mês que vem! Ai que saudades de um excelzinho! Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a parte 1 de minha saga em engenharia reversa.
+Scripts, AutoHotKey e Preguiça Lá por 2013~2014 conheci o joguinho Clicker Heroes, na Steam. Fiquei viciada e isso mudou drasticamente minha vida, desde então sempre estou jogando algum jogo Incremental ou Idle. Nessa época, acabei encontrando um Script para AutoHotKey, que fazia prestígios no jogo de forma automática, em loop. Extremamente prático, salvou muito tempo da minha vida.">
+
+
+  
+  
+  <meta itemprop="name" content="Project Mono Parte 1 - Fiquei Maluca">
+  <meta itemprop="description" content="Bom dia amigos, espero que todos estejam bem! Estive trabalhando no Choncho Adventure enquanto aprendo Pixel Art, fazendo entrevistas de emprego e tentando relaxar. Passei em uma vaga de dados, começo mês que vem! Ai que saudades de um excelzinho! Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a parte 1 de minha saga em engenharia reversa.
+Scripts, AutoHotKey e Preguiça Lá por 2013~2014 conheci o joguinho Clicker Heroes, na Steam. Fiquei viciada e isso mudou drasticamente minha vida, desde então sempre estou jogando algum jogo Incremental ou Idle. Nessa época, acabei encontrando um Script para AutoHotKey, que fazia prestígios no jogo de forma automática, em loop. Extremamente prático, salvou muito tempo da minha vida.">
+  <meta itemprop="datePublished" content="2025-02-25T16:50:27-03:00">
+  <meta itemprop="dateModified" content="2025-02-25T16:50:27-03:00">
+  <meta itemprop="wordCount" content="791">
+  <meta itemprop="keywords" content="Reverse Engineering,Project Mono">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>violeta</h1></a>
+<nav>
+  <a href="/">Home</a>
+
+  <a href="/blog/">Blog</a>
+
+<a href='https://cheshireviolet.github.io/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Project Mono Parte 1 - Fiquei Maluca</h1>
+<p class="byline">
+  <time datetime='2025-02-25' pubdate>
+    25-02-2025
+  </time>
+  
+</p>
+<div class="post-content">
+    
+    
+</div>
+
+<content>
+  <p>Bom dia amigos, espero que todos estejam bem! Estive trabalhando no Choncho Adventure enquanto aprendo Pixel Art, fazendo entrevistas de emprego e tentando relaxar. Passei em uma vaga de dados, começo mês que vem! Ai que saudades de um excelzinho!
+Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a parte 1 de minha saga em engenharia reversa.</p>
+<h2 id="scripts-autohotkey-e-preguiça">Scripts, AutoHotKey e Preguiça</h2>
+<p>Lá por 2013~2014 conheci o joguinho Clicker Heroes, na Steam. Fiquei viciada e isso mudou drasticamente minha vida, desde então sempre estou jogando algum jogo Incremental ou Idle. Nessa época, acabei encontrando um Script para AutoHotKey, que fazia prestígios no jogo de forma automática, em loop. Extremamente prático, salvou muito tempo da minha vida.</p>
+<p>Conforme o tempo foi passando, criei meus próprios scripts para alguns jogos. Basicamente qualquer jogo que era uma ação repetitiva que podia ser emulada através de inputs, eu scriptava usando AHK. Até Disgaea, que é minha franquia favorita, foi automatizado (em minha defesa, platinei Disgaea 4 no Ps3, Disgaea 5 no ps4 e zerei Disgaea 1 no PSP).</p>
+<p>Ano passado encontrei o jogo Click Click Dig na Steam, que ainda está sendo desenvolvido mas tem a demo disponível e, como de costume, queria criar um script de automação. No caso desse jogo, seria um script simples, que aperta os botões <strong>12345</strong> a cada <strong>X</strong> tempo.</p>
+<p>Não lembro a razão, mas tinha decidido que não queria que o script maximizasse a janela, enviasse os inputs e minimizasse depois. Na minha cabeça, o script antigo de Clicker Heroes não precisava fazer isso (Spoiler: Precisava), e então começou a GUERRA.</p>
+<h2 id="largando-o-autohotkey">Largando o AutoHotKey</h2>
+<p>Tentei ControlSend e milhões de alternativas que encontrei na internet, sem sucesso. Já tinha tentado fazer isso antes, mas nas outras vezes desisti rápido e só segui a vida.</p>
+<p>Decidi então que iria <strong>criar um programa que envia os inputs diretamente para o jogo mesmo que esteja minimizado</strong>.</p>
+<p><strong>Se você está aqui querendo uma solução simples, o mais fácil seria rodar o jogo e o script em uma Virtual Machine.</strong></p>
+<h2 id="winapi">WinAPI</h2>
+<p>Aprendi a usar a WinAPI e fui aos testes, sem sucesso, pois o jogo precisava estar maximizado para processar os inputs.</p>
+<p>Foi aí que percebi que foi uma ideia bem arrogante, considerando que AHK existe há quase 20 anos e nem eles fizeram dar certo. Até onde eu entendo hoje, é uma <strong>limitação do próprio Windows.</strong></p>
+<p>Mas eu não quero soluções fáceis, a teimosia tomou conta de mim e então entrei em um buraco&hellip;levemente diferente do esperado.</p>
+<h2 id="dll-injection">DLL Injection</h2>
+<p>Não pergunte sobre como cheguei nisso, estava em fase de mania, mas pensei que &ldquo;se não posso enviar os inputs para uma janela minimizada, irei <strong>injetar código que emula os inputs na janela minimizada.</strong></p>
+<p>Ideia fofa, porém besta. Nisso, aprendi a criar e injetar DLL em processos, mas os inputs não estavam sendo lidos. Pela última vez nesse texto, <strong>não era possível processar inputs na janela minimizada, não importando de onde eles foram enviados.</strong></p>
+<p>Mas agora com o novo conhecimento de injeção de código, existe algo mais interessante do que enviar os inputs!</p>
+<h2 id="muita-sede-ao-pote">Muita Sede Ao Pote</h2>
+<p>Se eu consigo injetar código diretamente na memória, eu não poderia nesse caso só invocar as funções de cada botão? <strong>Sim, finalmente uma resposta que faz sentido.</strong> O problema agora é que eu não tinha conhecimentos em engenharia reversa. A vez que cheguei mais perto disso foi quando era criança e usava cheat engine para aumentar as moedinhas e comprar a loja toda.</p>
+<p>Procurando na internet, você vai encontrar um milhão de videos sobre Cheat Engine, e até mesmo algumas linhas de código sobre injeção de DLL e como alterar dados na memória em tempo real, mas nada de forma muito didática, no final das contas isso é sobre cheat em joguinho, quem que quer realmente aprender sobre né (<strong>resposta: EU, EU QUERIA APRENDER DE VERDADE</strong>).</p>
+<p>Mas não foi completamente inútil, é meio impressionante o quanto as pessoas aprendem de assuntos complexos por motivos nada a ver. Nessa brincadeira, com muita paciência descobri como encontrar os Offsets para cada um dos objetos da classe HeroSkill, que é exatamente o que eu preciso.</p>
+<p>Meu problema agora era aprender a instanciar os métodos de uma classe. Pesquisei bastante e não encontrei muitas respostas sobre, visto que o próprio CheatEngine tem função para dissecar jogos que usem MonoCLR e invocar métodos, não há muito interesse nesse tipo de conteúdo. E sim, essa seria outra solução, mas o objetivo agora ia além de fazer um script para o Click Click Dig, eu estava realmente intrigada com tudo isso.</p>
+<p>Esse post todo se passou em 2024, mas não foi o fim da história! Mês que vem (ou talvez em Abril) vem a parte 2, obrigada por ter lido!</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/tags/reverse-engineering/">#reverse engineering</a>
+  
+    <a class="blog-tags" href="/tags/project-mono/">#project mono</a>
+  
+</p>
+
+
+
+
+  </main>
+  <footer><small>
+   | 
+</small></footer>
+
+    
+</body>
+
+</html>
