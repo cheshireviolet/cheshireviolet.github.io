@@ -18,7 +18,7 @@ Aproveitar a introdução para agradecer a [este post](https://navendu.me/posts/
 
 Exemplo:
 
-```
+```Markdown
 Input: nums = [100,4,200,1,3,2]
 Output: 4
 Explicação: A sequencia mais longa de valores consecutivos é [1,2,3,4], o que torna a resposta 4.

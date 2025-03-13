@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Python on violeta</title>
-    <link>https://cheshireviolet.github.io/tags/python/</link>
-    <description>Recent content in Python on violeta</description>
+    <title>Slay the Spire on violeta</title>
+    <link>https://cheshireviolet.github.io/tags/slay-the-spire/</link>
+    <description>Recent content in Slay the Spire on violeta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Tue, 04 Mar 2025 18:25:36 -0300</lastBuildDate>
-    <atom:link href="https://cheshireviolet.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cheshireviolet.github.io/tags/slay-the-spire/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Slay the Spire e Análise de Dados - Parte 1</title>
       <link>https://cheshireviolet.github.io/blog/sixth/</link>
@@ -154,157 +154,6 @@
 <p>Enfim, esse é outro projeto que parecia muito mais simples na minha cabeça.</p>
 <p>Mais um projeto que será lentamente atualizado, mas pelo menos agora estou anotando o progresso com esses posts.</p>
 <p>Obrigada a todos que leram, até a próxima!</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Leetcode 128. Longest Consecutive Sequence</title>
-      <link>https://cheshireviolet.github.io/blog/second/</link>
-      <pubDate>Mon, 02 Dec 2024 01:50:58 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/blog/second/</guid>
-      <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;&#xA;&lt;p&gt;Recentemente eu comecei a fazer os desafios do leetcode criado como &lt;a href=&#34;https://leetcode.com/studyplan/top-interview-150/&#34;&gt;problemas de entrevistas da FAANG&lt;/a&gt;, tanto pra refrescar noções de estruturas de dados quanto para praticar python, já que de modo geral por mim faço tudo em C#.&lt;/p&gt;&#xA;&lt;p&gt;Aproveitar a introdução para agradecer a &lt;a href=&#34;https://navendu.me/posts/adding-diagrams-to-your-hugo-blog-with-mermaid/&#34;&gt;este post&lt;/a&gt; pelo tutorial de como implementar mermaid em um fórum feito em hugo, graças ao post não precisei desenhar as árvores, e sim usar markdown :D&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<h2 id="intro">Intro</h2>
-<p>Recentemente eu comecei a fazer os desafios do leetcode criado como <a href="https://leetcode.com/studyplan/top-interview-150/">problemas de entrevistas da FAANG</a>, tanto pra refrescar noções de estruturas de dados quanto para praticar python, já que de modo geral por mim faço tudo em C#.</p>
-<p>Aproveitar a introdução para agradecer a <a href="https://navendu.me/posts/adding-diagrams-to-your-hugo-blog-with-mermaid/">este post</a> pelo tutorial de como implementar mermaid em um fórum feito em hugo, graças ao post não precisei desenhar as árvores, e sim usar markdown :D</p>
-<h2 id="o-problema-da-vez">O problema da vez</h2>
-<p><a href="https://leetcode.com/problems/longest-consecutive-sequence/description/?envType=study-plan-v2&amp;envId=top-interview-150">Dada uma array não ordenada de inteiros <em>nums</em>, retorne o tamanho da sequencia mais longa de valores consecutivos.</a></p>
-<p>Exemplo:</p>
-
-
-
-
-
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="ln">1</span><span class="cl">Input: nums = [100,4,200,1,3,2]
-</span></span><span class="line"><span class="ln">2</span><span class="cl">Output: 4
-</span></span><span class="line"><span class="ln">3</span><span class="cl">Explicação: A sequencia mais longa de valores consecutivos é [1,2,3,4], o que torna a resposta 4.</span></span></code></pre></div><p><strong>Todos os exemplos desse post vão usar o input acima como base</strong> (sim, adicionei essa linha de texto após repetir algumas vezes que tava usando o exemplo acima)</p>
-<p>A solução mais simples é ordenar a array, mas além de chata, é uma resposta pouco eficiente.</p>
-<p>Na classificação do plano de estudos, esse problema está na lista de Hashmaps, porém, nas tags, está o termo <em>Union Find</em>, que eu nunca tinha ouvido falar antes.</p>
-<h2 id="union-find-teoria">Union Find: Teoria</h2>
-<p>O resumo é que você separa os valores por critérios, gerando uma árvore muito eficiente de ser percorrida.</p>
-<p>Exemplo:</p>
-<div class="mermaid">
-flowchart TD
-  1 --> 2 --> 3 --> 4
-  100
-  200
-</div>
-
-<p><em>Tá, mas e aí?</em> Esse algoritmo é interessante porque ele possui duas funções: Union e Find (criatividade torando). É aí que vem a brincadeira de verdade:</p>
-<h3 id="findn">Find(n)</h3>
-<p>Sempre irá retornar a raiz do nodo. Find(4) retornaria 1, Find(1) retornaria 1.</p>
-<p>Uma coisa importante dessa estrutura é que para fins práticos, o parente da raiz será sempre a própria raiz.</p>
-<p>Para implementar, é bem simples:</p>
-
-
-
-
-
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Parent</span><span class="p">):</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="k">if</span> <span class="n">Parent</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">!=</span> <span class="n">x</span><span class="p">:</span> <span class="c1">#se não for a raiz</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="k">return</span> <span class="n">find</span><span class="p">(</span><span class="n">Parent</span><span class="p">[</span><span class="n">x</span><span class="p">])</span> <span class="c1">#repete a função, porém com o Parent de parâmetro</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="k">return</span> <span class="n">x</span> <span class="c1">#se for a raiz, retorna ela mesma</span></span></span></code></pre></div><h3 id="unionxy">Union(x,y)</h3>
-<p>Junta dois grupos, a partir de suas raízes.</p>
-<p>Exemplo: Union(4,200) alteraria a raiz de 200 para 1, que é a raiz de 4.</p>
-<div class="mermaid">
-flowchart TD
-  1 --> 2 --> 3 --> 4
-  1 --> 200
-  100
-</div>
-
-<p>Outra implementação simples:</p>
-
-
-
-
-
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">Parent</span><span class="p">):</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="n">Parent</span><span class="p">[</span><span class="n">Find</span><span class="p">(</span><span class="n">y</span><span class="p">)]</span> <span class="o">=</span> <span class="n">Find</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></span></span></code></pre></div><h2 id="resolvendo-o-problema">Resolvendo o problema</h2>
-<p>É minha primeira vez resolvendo um problema usando Union Find, então é possível que minha resposta não esteja optimizada, ainda assim fiquei contente com o resultado.</p>
-<p>A galera do leetcode gosta bastante de colocar casos excepcionais, porém válidos, nos testes, então logo de cara:</p>
-
-
-
-
-
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">if</span> <span class="n">nums</span> <span class="o">==</span> <span class="p">[]:</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">        <span class="k">return</span> <span class="mi">0</span></span></span></code></pre></div><p>Ok, podemos começar a resolução real, agora. Declarando as 3 variáveis que serão usadas:</p>
-<ul>
-<li><em>graph</em> é um dicionário aonde sua chave é <em>nums[i]</em>, e o valor é a raiz de <em>nums[i]</em></li>
-<li><em>graph_sum</em> é um dicionario aonde sua chave é <em>nums[i]</em> e o valor é o tamanho da sua sequência</li>
-<li><em>longest</em> é o tamanho da sequencia mais longa</li>
-</ul>
-
-
-
-
-
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">graph</span> <span class="o">=</span> <span class="p">{}</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">graph_sum</span> <span class="o">=</span> <span class="p">{}</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">longest</span> <span class="o">=</span> <span class="mi">0</span></span></span></code></pre></div><p>Find e Union, conforme a estrutura que estamos lidando</p>
-
-
-
-
-
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="k">if</span> <span class="n">graph</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="k">return</span> <span class="n">i</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="k">if</span> <span class="n">graph</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">i</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">        <span class="k">return</span> <span class="n">find</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="n">root_i</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="n">root_j</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="n">graph</span><span class="p">[</span><span class="n">root_i</span><span class="p">]</span> <span class="o">=</span> <span class="n">root_j</span></span></span></code></pre></div><p>E agora a parte que importa, que é bem pequena na verdade:</p>
-
-
-
-
-
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="n">graph</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl">        <span class="n">graph_sum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">        <span class="k">if</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">            <span class="n">union</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">            <span class="n">graph_sum</span><span class="p">[</span><span class="n">graph</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+=</span> <span class="n">graph_sum</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="k">if</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl">            <span class="n">union</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl">            <span class="n">graph_sum</span><span class="p">[</span><span class="n">graph</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+=</span> <span class="n">graph_sum</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="k">if</span> <span class="n">longest</span> <span class="o">&lt;</span> <span class="n">graph_sum</span><span class="p">[</span><span class="n">graph</span><span class="p">[</span><span class="n">i</span><span class="p">]]:</span>
-</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="n">longest</span> <span class="o">=</span> <span class="n">graph_sum</span><span class="p">[</span><span class="n">graph</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
-</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="k">return</span> <span class="n">longest</span></span></span></code></pre></div><p>Vamos quebrar por partes, pra simplificar. Primeiro, se o item ainda não existe em nossa árvore, adicionamos ele, com a raiz sendo ele mesmo.
-Também adicionamos no dicionário de sequencias, sua sequencia sendo 1.</p>
-
-
-
-
-
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="n">graph</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="n">graph_sum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span></span></span></code></pre></div><p>Ainda dentro do if acima, para evitar duplicidade, se suas sequencias existem (i-1 e i+1) na arvore, realizamos o Union, e então adicionamos o tamanho da sequencia que foi adicionada a raiz.</p>
-
-
-
-
-
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">if</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="n">union</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="n">graph_sum</span><span class="p">[</span><span class="n">graph</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+=</span> <span class="n">graph_sum</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="k">if</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="n">union</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="n">graph_sum</span><span class="p">[</span><span class="n">graph</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+=</span> <span class="n">graph_sum</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></span></span></code></pre></div><p>E por fim, se o tamanho da sequencia atual for maior que a maior sequencia registrada, atualizamos o <em>longest</em> para a nova maior sequencia. Então o loop continua com o próximo item da lista de entrada, e retorna o valor de <em>longest</em></p>
-
-
-
-
-
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">if</span> <span class="n">longest</span> <span class="o">&lt;</span> <span class="n">graph_sum</span><span class="p">[</span><span class="n">graph</span><span class="p">[</span><span class="n">i</span><span class="p">]]:</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">        <span class="n">longest</span> <span class="o">=</span> <span class="n">graph_sum</span><span class="p">[</span><span class="n">graph</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">return</span> <span class="n">longest</span></span></span></code></pre></div><h2 id="conclusão">Conclusão</h2>
-<p>Sinto que realizei algum teste de entrevista que tinha um problema parecido, ou que pelo menos eu poderia ter usado Union Find pra chegar em uma solução mais eficiente.</p>
-<p>Após uma pesquisada, realmente é algo que é visto com certa frequência em entrevistas, então vale muito a pena dar uma olhada e brincar!</p>
 ]]></content:encoded>
     </item>
   </channel>

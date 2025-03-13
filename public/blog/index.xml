@@ -6,16 +6,164 @@
     <description>Recent content in Blog on violeta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Tue, 25 Feb 2025 16:50:27 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 04 Mar 2025 18:25:36 -0300</lastBuildDate>
     <atom:link href="https://cheshireviolet.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Slay the Spire e Análise de Dados - Parte 1</title>
+      <link>https://cheshireviolet.github.io/blog/sixth/</link>
+      <pubDate>Tue, 04 Mar 2025 18:25:36 -0300</pubDate>
+      <guid>https://cheshireviolet.github.io/blog/sixth/</guid>
+      <description>&lt;p&gt;Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em &lt;strong&gt;outro projeto&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://store.steampowered.com/app/646570/Slay_the_Spire/&#34;&gt;Slay the Spire&lt;/a&gt; é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em <strong>outro projeto</strong>.</p>
+<p>Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.</p>
+<p><strong>Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™</strong></p>
+<h2 id="introdução">Introdução</h2>
+<p><a href="https://store.steampowered.com/app/646570/Slay_the_Spire/">Slay the Spire</a> é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.</p>
+<p>Comecei a jogar lá quando o jogo estava em Early Access, a atualmente tenho aproximadamente <strong>870 horas.</strong> É meu jogo de conforto e facilmente um dos meus jogos preferidos de todos os tempos.</p>
+<p>Logo quando o jogo saiu, os desenvolvedores pegavam dados das runs (<strong>com seu consentimento</strong>) para realizar o balanceamento do jogo, mas os mesmos também ficam guardados localmente, em arquivos <strong>.run</strong> que na verdade são JSON.</p>
+<p>Foi uma ideia que deu super certo para os desenvolvedores, o jogo é ridiculamente bem balanceado, com exceção da última personagem lançada, a Watcher, que não recebeu o mesmo carinho de anos de Análise de Dados e patches.</p>
+<p>Como é um formato super acessível e leve, houveram diversos projetos ao longo do tempo, super legais, que envolvem esses arquivos.</p>
+<p>Existia o SpireLogs, aonde usuários podiam fazer upload de suas runs e então ver dados sobre suas vitórias, derrotas, personagens, cartas, relíquias, mas também podia comparar com todas as outras runs que haviam sido carregadas.</p>
+<p>Atualmente existe o <a href="https://slaythereport.kojim.net/">Slay the Report</a>(em jp), aonde usuários também podem fazer upload e download de runs.</p>
+<p>Sempre houve esse carinho, tanto pela parte dos desenvolvedores quanto pelos jogadores.</p>
+<p>Estou lentamente retornando para a área de dados, então resolvi realizar projetos relacionados, e nada melhor do que pegar uma paixão para trabalhar em cima, né?</p>
+<h2 id="objetivo">Objetivo</h2>
+<p>Meus objetivos iniciais eram, em nenhuma ordem de importância: Aprender Pandas, Seaborn e PowerBI/Tableau.</p>
+<p>Na maior parte da minha vida, em projetos pessoais envolvendo dados eu sempre usei Excel/Google Spreadsheets, mas nisso meus relatórios, apesar de pontuais, não são tão bonitos e engraçadinhos como querem atualmente no mercado de trabalho. Ao mesmo tempo, usar alguma linguagem de programação e bibliotecas relacionadas pode agilizar bastante o processo. Pensei em aprender R, mas eu já mexo com python, então deixa o R pro futuro próximo, a fila está meio grande e o tempo é curto.</p>
+<h2 id="estrutura-do-projeto">Estrutura do Projeto</h2>
+<p>Não gosto de revelar a grande ideia final por trás de todos os passos, mas dá para já dar uma palhinha inicial. A complexidade não vem dos passos em si.</p>
+<ul>
+<li><strong>Extração:</strong> Para algumas coisas, posso utilizar os .run que ficam guardados localmente, para projetos maiores posso pegar runs de lugares como Slay the Report ou datasets espalhados por aí. Para o primeiro caso, já criei um script curtinho em Python que lê todas as runs e as guarda sem edição em um arquivo só, para facilitar processos futuros.</li>
+<li><strong>Normalização:</strong> O post desse mês basicamente será quase inteiro sobre normalização dos dados, já que apesar de extremamente útil, os dados da run são&hellip;bagunçados&hellip;para poupar as palavras que usei pra reclamar sobre reclamando com amigos.</li>
+<li><strong>Análise:</strong> Por que a gente precisa usar os dados para alguma coisa né? Eu tenho algumas ideias básicas e outras mais ousadas sobre o que quero fazer, mas fica pra depois. :p</li>
+<li><strong>Visualização:</strong> Vai ser o ponto que eu vou tentar ignorar ao máximo mesmo sendo algo que eu precisava aprender meio com urgência. Pelo lado bom, decidi que vou focar em Tableau e Seaborn para isso, PowerBI por algum motivo trava quando eu tento exportar os dados de <strong>meras</strong> 600 runs, pffft.</li>
+</ul>
+<h2 id="extração">Extração</h2>
+<p>Não tem muito a ser falado aqui, começando com projetos menores, em poucas linhas consegui pegar todos os .run e salvar tudo em um grande .json com os dados intactos, usando o <strong>run_id</strong>(uuid) dos próprios arquivos para evitar duplicidade. Também só guardei runs que não forem dailies, visto que os modificadores impactam bastante quase tudo que acontece.</p>
+<h2 id="normalização---parte-1-a-parte-fácil">Normalização - Parte 1 (a parte fácil)</h2>
+<p>Apesar de todos os arquivos serem .run que vieram do mesmo jogo, é necessária uma normalização, já que tem várias chaves que são inúteis ou redundantes, como <code>is_prod</code>, que era usada durante a alpha. Como não tenho runs o bastante pois sempre esqueço de ligar, também removi as chaves relacionadas a mods, como os status específicos de cada relíquia.</p>
+<p>Outra parte importante é normalizar tipagem de algumas coisas, visto que em alguns lugares os andares do jogo estão como inteiros, e em outros como float (sempre vai ser um número inteiro).</p>
+<p>Também tem algumas coisas engraçadinhas, as classes estão definidas como <code>DEFECT, IRONCLAD, WATCHER</code>, mas a Silent está como <code>THE_SILENT</code>.</p>
+<p>Várias cartas, relíquias e eventos estão com nomes da Beta, coisas com apóstrofo as vezes perdem espaçamento, enfim.</p>
+<p>Não é tão difícil, mas é super importante, para que a base de dados seja reliable a longo prazo sem manutenção.</p>
+<h2 id="normalização---parte-2-eu-vou-explodir">Normalização - Parte 2 (eu vou explodir)</h2>
+<p>Nem tudo são flores. Um dos meus objetivos é converter as runs em um formato que seja possível ver EXATAMENTE qual foi a decisão do player e suas alternativas (quando possível). Slay the Spire é um jogo cheio de decisões e possibilidades, e o log das decisões é baseado, em sua grande parte, em como vai aparecer no <strong>Match History</strong>.</p>
+<p>Então vamos supor que eu queira recriar os dados do andar <strong>7</strong>. Okay, segundo a chave <code>path_per_floor[7]</code>, o resultado é <code>?</code>, que significa que pode ser um evento, ou outra coisa como um combate ou um baú do tesouro.</p>
+<p>Ainda tenho que ver com calma se vai ser <strong>sempre</strong> assim, mas nesse caso era um Tesouro, que é possível verificar pelo <code>path_taken[7]</code>, que retorna <code>T</code>.</p>
+<p>Até aí okay, mas e se eu te falar que <code>path_per_floor</code> tem <strong>56</strong> valores nessa run, enquanto <strong>path_taken</strong> tem <strong>52</strong>? É explicável, mas para automatizar isso você já tem que criar a primeira exceção. Mesmo que fosse usado só o <code>path_taken</code>, que é mais preciso, a run teve, segundo <code>max_floor</code>, <strong>57</strong> floors. Ironicamente, outros valores que são separados por andar possuem no máximo <strong>55</strong>.</p>
+<p>Deixe-me te explicar enquanto eu crio mais uma dúvida na sua cabeça:</p>
+<p>Pelo próprio jogo, no match history, uma run começa no andar <strong>1</strong> e vai até o andar <strong>57</strong>. No Andar <strong>1</strong> sempre vai começar com um <code>M</code> (batalha contra monstro normal).</p>
+<p><code>path_per_floor</code> considera todos os andares do jogo, incluindo os que não foram tomadas decisões, que estão ali como <code>null</code>. Em uma run na dificuldade mais alta, que vai o mais longe possível, as ocorrências de <code>null</code> são após o primeiro e segundo bosses, aonde você vai para um andar abrir um baú de tesouro, após o terceiro boss, em que você irá usar chaves para abrir o caminho secreto, e logo após o heart, que representa o fim do jogo. <code>56 - 4 = 52</code>, a conta bate, graças a deus.</p>
+<p>Mas e por que <code>max_floor</code> é 57? ÓTIMA PERGUNTA, não existe um motivo, mas minha interpretação pessoal é que o jogo considera o evento do <code>Neow</code>, que precede todas as runs, como um andar.</p>
+<p>Antes de toda run começar, a grandiosa baleia Neow lhe oferece algumas opções para facilitar sua vida na run. Quanto melhor a recompensa, maior o risco, podendo lhe dar dano, retirar seu gold, e, às vezes, lhe dar uma curse. A blessing fica em <code>neow_bonus</code>, enquanto o custo fica em <code>neow_cost</code>.</p>
+<p>Parece simples né? NÃO.</p>
+<p>Vou usar uma run de exemplo, o <code>neow_bonus</code> foi <code>ONE_RARE_RELIC</code>. Qual relic? Vamos descobrir!</p>
+<p>existe o <code>relics_obtained</code>, que nesse caso está assim:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="s2">&#34;relics_obtained&#34;</span><span class="err">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="nt">&#34;floor&#34;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">        <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;Turnip&#34;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="nt">&#34;floor&#34;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;Boot&#34;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="nt">&#34;floor&#34;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;Gremlin Horn&#34;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="p">]</span></span></span></code></pre></div><p>A primeira relíquia da lista é uma <code>Turnip</code>, só que ela foi adquirida no andar <code>6</code>, em um tesouro.</p>
+<p>Existe algum outro lugar? Graças a deus existe! A chave <code>relics</code>:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="ln">1</span><span class="cl"><span class="s2">&#34;relics&#34;</span><span class="err">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="s2">&#34;Cracked Core&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="s2">&#34;Gambling Chip&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="s2">&#34;Turnip&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="s2">&#34;Boot&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="s2">&#34;Gremlin Horn&#34;</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">]</span></span></span></code></pre></div><p>Com as informações passadas, é possível deduzir que a relíquia obtida foi <code>Gambling Chip</code>, já que a <code>Cracked Core</code> é a relíquia inicial da classe <code>DEFECT</code>.</p>
+<p>Para automatizar isso, uma pessoa poderia dizer para usar o segundo item da lista ao detectar o evento, mas infelizmente existe uma exceção que tornaria essa ideia errada:</p>
+<ul>
+<li>Existe um evento aonde pedem uma relíquia sua em troca de outra relíquia, é possível que a relíquia obtida nesse evento suma, a nova relíquia vai para o final da fila.</li>
+</ul>
+<p>Isso torna fazer um track apropriado das relíquias uma tarefa bem difícil. E a Curse?</p>
+<p><code>card_choices</code> começa com a escolha do primeiro combate, e possui apenas escolhas que envolvem opções.</p>
+<p>Vamos ver todas as cartas em <code>master_deck</code>:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="s2">&#34;master_deck&#34;</span><span class="err">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="s2">&#34;AscendersBane&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="s2">&#34;Strike_B&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="s2">&#34;Strike_B&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="s2">&#34;Strike_B&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="s2">&#34;Strike_B&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="s2">&#34;Defend_B&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="s2">&#34;Defend_B&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="s2">&#34;Defend_B&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="s2">&#34;Defend_B&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="s2">&#34;Zap+1&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="s2">&#34;Dualcast&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="s2">&#34;Doom and Gloom&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="s2">&#34;Coolheaded&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="s2">&#34;Coolheaded&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="s2">&#34;Undo&#34;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="p">]</span></span></span></code></pre></div><p>A única curse no deck é <code>AscendersBane</code>, que é adicionada em todo deck após uma certa dificuldade. Para não extender demais, encontramos em <code>event_choices</code>, que segue esse formato:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="s2">&#34;event_choices&#34;</span><span class="err">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">            <span class="nt">&#34;cards_removed&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">                <span class="s2">&#34;Doubt&#34;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">            <span class="p">],</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">            <span class="nt">&#34;damage_healed&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">            <span class="nt">&#34;gold_gain&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">            <span class="nt">&#34;player_choice&#34;</span><span class="p">:</span> <span class="s2">&#34;Card Removal&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">            <span class="nt">&#34;damage_taken&#34;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">            <span class="nt">&#34;max_hp_gain&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">            <span class="nt">&#34;max_hp_loss&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">            <span class="nt">&#34;event_name&#34;</span><span class="p">:</span> <span class="s2">&#34;Golden Wing&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">            <span class="nt">&#34;floor&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">            <span class="nt">&#34;gold_loss&#34;</span><span class="p">:</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">        <span class="p">},</span></span></span></code></pre></div><p>Achamos a curse! Dá para deduzir pois ela foi removida logo cedo, no andar 2 (o andar 1 sempre vai ser um combate). Mas não existia menção a ela em nenhum lugar.</p>
+<p>Ainda sobre <code>event_choices</code>, existe um evento com vampiros, que substituem cartas <code>strike</code> no seu deck por cartas <code>bite</code>. Apesar de no exemplo acima ter <code>cards_removed</code>, nesse outro já não tem.</p>
+<p>Um dos meus objetivos é conseguir guardar as <code>decisões</code> tomadas em todos os andares e o <code>game state</code>, na medida do possível (não tem log detalhado das batalhas, por exemplo), mas essas inconsistências geram várias mini-exceções chatas de lidar.</p>
+<p>Existem dois jeitos de guardar o <code>game state</code> e as <code>decisões</code> por turno de forma prática:</p>
+<ul>
+<li>
+<p>Ir de trás pra frente, pegar o estado do jogo no ultimo andar da run, e tentar fazer backtrack para preencher possíveis lacunas.</p>
+</li>
+<li>
+<p>Preencher os dados com Place Holders, que serão meticulosamente investigados e substituídos conforme a run avança.</p>
+</li>
+</ul>
+<p>Enfim, esse é outro projeto que parecia muito mais simples na minha cabeça.</p>
+<p>Mais um projeto que será lentamente atualizado, mas pelo menos agora estou anotando o progresso com esses posts.</p>
+<p>Obrigada a todos que leram, até a próxima!</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Project Mono Parte 1 - Fiquei Maluca</title>
       <link>https://cheshireviolet.github.io/blog/fifth/</link>
       <pubDate>Tue, 25 Feb 2025 16:50:27 -0300</pubDate>
       <guid>https://cheshireviolet.github.io/blog/fifth/</guid>
-      <description>&lt;p&gt;Bom dia amigos, espero que todos estejam bem! Estive trabalhando no Choncho Adventure enquanto aprendo Pixel Art, fazendo entrevistas de emprego e tentando relaxar. Passei em uma vaga de dados, começo mês que vem! Ai que saudades de um excelzinho!&#xA;Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a parte 1 de minha saga em engenharia reversa.&lt;/p&gt;&#xA;&lt;h2 id=&#34;scripts-autohotkey-e-preguiça&#34;&gt;Scripts, AutoHotKey e Preguiça&lt;/h2&gt;&#xA;&lt;p&gt;Lá por 2013~2014 conheci o joguinho Clicker Heroes, na Steam. Fiquei viciada e isso mudou drasticamente minha vida, desde então sempre estou jogando algum jogo Incremental ou Idle. Nessa época, acabei encontrando um Script para AutoHotKey, que fazia prestígios no jogo de forma automática, em loop. Extremamente prático, salvou muito tempo da minha vida.&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p>Bom dia amigos, espero que todos estejam bem! Estive trabalhando no Choncho Adventure enquanto aprendo Pixel Art, fazendo entrevistas de emprego e tentando relaxar. Passei em uma vaga de dados, começo mês que vem! Ai que saudades de um excelzinho!
-Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a parte 1 de minha saga em engenharia reversa.</p>
+      <description>&lt;p&gt;Bom dia amigos, espero que todos estejam bem! Estive trabalhando no Choncho Adventure enquanto aprendo Pixel Art, fazendo entrevistas de emprego e tentando relaxar. Passei em uma vaga de dados, começo mês que vem! Ai que saudades de um excelzinho!&lt;/p&gt;&#xA;&lt;p&gt;Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a parte 1 de minha saga em engenharia reversa.&lt;/p&gt;&#xA;&lt;h2 id=&#34;scripts-autohotkey-e-preguiça&#34;&gt;Scripts, AutoHotKey e Preguiça&lt;/h2&gt;&#xA;&lt;p&gt;Lá por 2013~2014 conheci o joguinho Clicker Heroes, na Steam. Fiquei viciada e isso mudou drasticamente minha vida, desde então sempre estou jogando algum jogo Incremental ou Idle. Nessa época, acabei encontrando um Script para AutoHotKey, que fazia prestígios no jogo de forma automática, em loop. Extremamente prático, salvou muito tempo da minha vida.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Bom dia amigos, espero que todos estejam bem! Estive trabalhando no Choncho Adventure enquanto aprendo Pixel Art, fazendo entrevistas de emprego e tentando relaxar. Passei em uma vaga de dados, começo mês que vem! Ai que saudades de um excelzinho!</p>
+<p>Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a parte 1 de minha saga em engenharia reversa.</p>
 <h2 id="scripts-autohotkey-e-preguiça">Scripts, AutoHotKey e Preguiça</h2>
 <p>Lá por 2013~2014 conheci o joguinho Clicker Heroes, na Steam. Fiquei viciada e isso mudou drasticamente minha vida, desde então sempre estou jogando algum jogo Incremental ou Idle. Nessa época, acabei encontrando um Script para AutoHotKey, que fazia prestígios no jogo de forma automática, em loop. Extremamente prático, salvou muito tempo da minha vida.</p>
 <p>Conforme o tempo foi passando, criei meus próprios scripts para alguns jogos. Basicamente qualquer jogo que era uma ação repetitiva que podia ser emulada através de inputs, eu scriptava usando AHK. Até Disgaea, que é minha franquia favorita, foi automatizado (em minha defesa, platinei Disgaea 4 no Ps3, Disgaea 5 no ps4 e zerei Disgaea 1 no PSP).</p>
@@ -46,27 +194,27 @@ Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a p
       <link>https://cheshireviolet.github.io/blog/fourth/</link>
       <pubDate>Fri, 10 Jan 2025 00:55:51 -0300</pubDate>
       <guid>https://cheshireviolet.github.io/blog/fourth/</guid>
-      <description>&lt;p&gt;Primeiramente, feliz ano novo a todos! Esse post veio um pouco tarde, mas aconteceu bastante coisa na minha vida recentemente. Além disso, ano novo é sempre aquela correria toda.&lt;/p&gt;&#xA;&lt;p&gt;Não gosto de metas de ano novo pois elas mais me atrapalham e diminuem minha força de vontade do que o oposto, mas tenho algumas ideias que pretendo realizar esse ano.&lt;/p&gt;&#xA;&lt;h1 id=&#34;1-terminar-o-choncho-adventures-e-minhas-bibliotecas-de-desenvolvimento&#34;&gt;1. Terminar o Choncho Adventures e minhas bibliotecas de desenvolvimento&lt;/h1&gt;&#xA;&lt;p&gt;Esse é o objetivo que mais é algo concreto e não só uma ideia. Comecei a trabalhar nesse joguinho chamado Choncho Adventures, utilizando MonoGame no lugar de uma Game Engine moderna. Isso significa que estou fazendo absolutamente tudo do zero.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Primeiramente, feliz ano novo a todos! Esse post veio um pouco tarde, mas aconteceu bastante coisa na minha vida recentemente. Além disso, ano novo é sempre aquela correria toda.&lt;/p&gt;&#xA;&lt;p&gt;Não gosto de metas de ano novo pois elas mais me atrapalham e diminuem minha força de vontade do que o oposto, mas tenho algumas ideias que pretendo realizar esse ano.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-terminar-o-choncho-adventure-e-minhas-bibliotecas-de-desenvolvimento&#34;&gt;1. Terminar o Choncho Adventure e minhas bibliotecas de desenvolvimento&lt;/h2&gt;&#xA;&lt;p&gt;Esse é o objetivo que mais é algo concreto e não só uma ideia. Comecei a trabalhar nesse joguinho chamado Choncho Adventure, utilizando MonoGame no lugar de uma Game Engine moderna. Isso significa que estou fazendo absolutamente tudo do zero.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Primeiramente, feliz ano novo a todos! Esse post veio um pouco tarde, mas aconteceu bastante coisa na minha vida recentemente. Além disso, ano novo é sempre aquela correria toda.</p>
 <p>Não gosto de metas de ano novo pois elas mais me atrapalham e diminuem minha força de vontade do que o oposto, mas tenho algumas ideias que pretendo realizar esse ano.</p>
-<h1 id="1-terminar-o-choncho-adventures-e-minhas-bibliotecas-de-desenvolvimento">1. Terminar o Choncho Adventures e minhas bibliotecas de desenvolvimento</h1>
-<p>Esse é o objetivo que mais é algo concreto e não só uma ideia. Comecei a trabalhar nesse joguinho chamado Choncho Adventures, utilizando MonoGame no lugar de uma Game Engine moderna. Isso significa que estou fazendo absolutamente tudo do zero.</p>
+<h2 id="1-terminar-o-choncho-adventure-e-minhas-bibliotecas-de-desenvolvimento">1. Terminar o Choncho Adventure e minhas bibliotecas de desenvolvimento</h2>
+<p>Esse é o objetivo que mais é algo concreto e não só uma ideia. Comecei a trabalhar nesse joguinho chamado Choncho Adventure, utilizando MonoGame no lugar de uma Game Engine moderna. Isso significa que estou fazendo absolutamente tudo do zero.</p>
 <p>Por mais que entenda que engines são drasticamente mais eficientes e práticas, gosto de ter total controle sobre o que estou fazendo. Por isso, estou criando junto algumas bibliotecas que irão facilitar minha vida em futuros projetos (caso siga utilizando MonoGame, o que é bem provável considerando que é minha escolha desde a época da XNA).</p>
 <p>Depois de quase 15 anos, acho que já deu de ser Game Dev sem jogo lançado.</p>
-<h1 id="2-focar-em-menos-projetos-por-vez">2. Focar em menos projetos por vez</h1>
-<p>Por uns 3 meses ano passado, estava trabalhando no Choncho Adventures, enquanto trabalhava no meu emprego, enquanto trabalhava em um outro projeto (que pretendo falar sobre <strong>em breve</strong>), enquanto estudava matérias da faculdade e estudava em um bootcamp.</p>
+<h2 id="2-focar-em-menos-projetos-por-vez">2. Focar em menos projetos por vez</h2>
+<p>Por uns 3 meses ano passado, estava trabalhando no Choncho Adventures, enquanto trabalhava no meu emprego, enquanto trabalhava em um outro projeto (que pretendo falar sobre <strong>em breve</strong>), enquanto estudava matérias da faculdade e estudava em um Bootcamp.</p>
 <p>Talvez tenha sido uma fase estranha, mas ainda não me recuperei completamente desse período, e a falta de foco acaba atrapalhando a longo prazo.</p>
 <p>Quero não deixar passar muito de um estudo e um projeto por vez, tanto para não me sobrecarregar, mas também pros passos em frente serem mais nítidos.</p>
-<h1 id="3-tomar-jeito-e-modos">3. Tomar jeito e modos</h1>
+<h2 id="3-tomar-jeito-e-modos">3. Tomar jeito e modos</h2>
 <p>Não tenho mais idade para agir do jeito que eu agia até pouco tempo atrás. Os últimos meses me ensinaram que dei muita sorte nas coisas não terem dado errado antes, considerando minhas ações imprudentes. E a sorte acabou, não dá pra continuar assim não, nos últimos dois anos meu senso de responsabilidade melhorou bastante, mas ainda tenho vários pontos a melhorar.</p>
-<h1 id="coisas-menores-que-não-quero-ir-muito-a-fundo-sobre">Coisas menores que não quero ir muito a fundo sobre</h1>
+<h2 id="coisas-menores-que-não-quero-ir-muito-a-fundo-sobre">Coisas menores que não quero ir muito a fundo sobre</h2>
 <ul>
 <li>Cuidar melhor das amizades de quem realmente está lá pelo meu bem</li>
 <li>Lembrar mais de descansar, não ser tão dura comigo mesma</li>
 <li>Aproveitar melhor o presente, sem ignorar o futuro</li>
 <li>Fazer (e seguir) um roadmap mais específico para a área que quero seguir</li>
 </ul>
-<h1 id="conclusão">Conclusão</h1>
+<h2 id="conclusão">Conclusão</h2>
 <p>Esse ano vai ser difícil, mas vai valer a pena a longo prazo. Uma caixinha de surpresas, mas tentarei diminuir a variância, ou pelo menos aumentar o piso dos resultados.</p>
 ]]></content:encoded>
     </item>
@@ -75,9 +223,9 @@ Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a p
       <link>https://cheshireviolet.github.io/blog/third/</link>
       <pubDate>Tue, 03 Dec 2024 01:43:07 -0300</pubDate>
       <guid>https://cheshireviolet.github.io/blog/third/</guid>
-      <description>&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;AVISO:&lt;/strong&gt; Por mais que seja possível treinar um modelo utilizando a CPU, é um processo extremamente mais demorado do que poderia ser, pela sua própria sanidade, usa o Google Colab se possível. Ou alguma distro de linux.&lt;/p&gt;&#xA;&lt;p&gt;Um dos exercícios do Bootcamp de machine learning que estou realizando é realizar exatamente o que diz no título desse post. No caso, a parte de ser no windows é por eu ser cabeça dura demais para só usar o Google Collab e não ter problemas.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;AVISO:&lt;/strong&gt; Por mais que seja possível treinar um modelo utilizando a CPU, é um processo extremamente mais demorado do que poderia ser, pela sua própria sanidade, use o Google Collab se possível. Ou alguma distro de linux.&lt;/p&gt;&#xA;&lt;p&gt;Um dos exercícios do Bootcamp de machine learning que estou realizando é realizar exatamente o que diz no título desse post. No caso, a parte de ser no windows é por eu ser cabeça dura demais para só usar o Google Collab e não ter problemas.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="introdução">Introdução</h2>
-<p><strong>AVISO:</strong> Por mais que seja possível treinar um modelo utilizando a CPU, é um processo extremamente mais demorado do que poderia ser, pela sua própria sanidade, usa o Google Colab se possível. Ou alguma distro de linux.</p>
+<p><strong>AVISO:</strong> Por mais que seja possível treinar um modelo utilizando a CPU, é um processo extremamente mais demorado do que poderia ser, pela sua própria sanidade, use o Google Collab se possível. Ou alguma distro de linux.</p>
 <p>Um dos exercícios do Bootcamp de machine learning que estou realizando é realizar exatamente o que diz no título desse post. No caso, a parte de ser no windows é por eu ser cabeça dura demais para só usar o Google Collab e não ter problemas.</p>
 <p>Se você tentar seguir o tutorial da própria <a href="https://pjreddie.com/darknet/yolo/">Darknet</a>, é possível que você encare os mesmos problemas que eu encarei, então vou explicar como fiz tudo funcionar.</p>
 <p>Além disso, essa também é a própria resolução do exercício, uau estamos unindo o útil ao agradável.</p>
@@ -201,9 +349,9 @@ Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a p
 
 
 
-<pre tabindex="0"><code>Input: nums = [100,4,200,1,3,2]
-Output: 4
-Explicação: A sequencia mais longa de valores consecutivos é [1,2,3,4], o que torna a resposta 4.</code></pre><p><strong>Todos os exemplos desse post vão usar o input acima como base</strong> (sim, adicionei essa linha de texto após repetir algumas vezes que tava usando o exemplo acima)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="ln">1</span><span class="cl">Input: nums = [100,4,200,1,3,2]
+</span></span><span class="line"><span class="ln">2</span><span class="cl">Output: 4
+</span></span><span class="line"><span class="ln">3</span><span class="cl">Explicação: A sequencia mais longa de valores consecutivos é [1,2,3,4], o que torna a resposta 4.</span></span></code></pre></div><p><strong>Todos os exemplos desse post vão usar o input acima como base</strong> (sim, adicionei essa linha de texto após repetir algumas vezes que tava usando o exemplo acima)</p>
 <p>A solução mais simples é ordenar a array, mas além de chata, é uma resposta pouco eficiente.</p>
 <p>Na classificação do plano de estudos, esse problema está na lista de Hashmaps, porém, nas tags, está o termo <em>Union Find</em>, que eu nunca tinha ouvido falar antes.</p>
 <h2 id="union-find-teoria">Union Find: Teoria</h2>
@@ -340,9 +488,9 @@ Também adicionamos no dicionário de sequencias, sua sequencia sendo 1.</p>
       <link>https://cheshireviolet.github.io/blog/first/</link>
       <pubDate>Wed, 27 Nov 2024 20:35:43 -0300</pubDate>
       <guid>https://cheshireviolet.github.io/blog/first/</guid>
-      <description>&lt;p&gt;Bom, vamo lá né. Primeiro post é sempre complicado, você tem que se apresentar, mas já tem uma micro apresentação na página inicial. Palavras são difíceis, porque introdução nunca é o que você realmente quer falar sobre.&lt;/p&gt;&#xA;&lt;p&gt;A ideia de criar esse blog surgiu da vontade de falar sobre meus projetos, porém fora do padrão microblogging. Às vezes você tem uma idéia muito boa porém despedaçar em mini posts e futuramente perder tudo é&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;chato.&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p>Bom, vamo lá né. Primeiro post é sempre complicado, você tem que se apresentar, mas já tem uma micro apresentação na página inicial. Palavras são difíceis, porque introdução nunca é o que você realmente quer falar sobre.</p>
-<p>A ideia de criar esse blog surgiu da vontade de falar sobre meus projetos, porém fora do padrão microblogging. Às vezes você tem uma idéia muito boa porém despedaçar em mini posts e futuramente perder tudo é&hellip;&hellip;&hellip;&hellip;chato.</p>
+      <description>&lt;p&gt;Bom, vamos lá né. Primeiro post é sempre complicado, você tem que se apresentar, mas já tem uma micro apresentação na página inicial. Palavras são difíceis, porque introdução nunca é o que você realmente quer falar sobre.&lt;/p&gt;&#xA;&lt;p&gt;A ideia de criar esse blog surgiu da vontade de falar sobre meus projetos, porém fora do padrão microblogging. Às vezes você tem uma ideia muito boa porém despedaçar em mini posts e futuramente perder tudo é&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;chato.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Bom, vamos lá né. Primeiro post é sempre complicado, você tem que se apresentar, mas já tem uma micro apresentação na página inicial. Palavras são difíceis, porque introdução nunca é o que você realmente quer falar sobre.</p>
+<p>A ideia de criar esse blog surgiu da vontade de falar sobre meus projetos, porém fora do padrão microblogging. Às vezes você tem uma ideia muito boa porém despedaçar em mini posts e futuramente perder tudo é&hellip;&hellip;&hellip;&hellip;chato.</p>
 <p>Ao mesmo tempo tenho trabalhado em formas de manter o foco e observar meu progresso, e um blog é exatamente isso.</p>
 <p>Também é <del>, em teoria,</del> uma forma de espalhar conhecimento adiante. Nunca se sabe quando alguém do nada acha um post seu com uma solução para um problema.</p>
 <p>Enfim, não faço ideia do quão longe esse blog vai, mas é mais um passo pra frente.</p>

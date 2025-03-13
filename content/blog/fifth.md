@@ -6,6 +6,7 @@ tags = ['Reverse Engineering', 'Project Mono']
 +++
 
 Bom dia amigos, espero que todos estejam bem! Estive trabalhando no Choncho Adventure enquanto aprendo Pixel Art, fazendo entrevistas de emprego e tentando relaxar. Passei em uma vaga de dados, começo mês que vem! Ai que saudades de um excelzinho!
+
 Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a parte 1 de minha saga em engenharia reversa.
 
 ## Scripts, AutoHotKey e Preguiça

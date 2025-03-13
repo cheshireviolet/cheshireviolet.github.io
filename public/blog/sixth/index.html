@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://cheshireviolet.github.io/images/favicon.png" />
+<title>Slay the Spire e Análise de Dados - Parte 1 | violeta</title>
+<meta name="title" content="Slay the Spire e Análise de Dados - Parte 1" />
+<meta name="description" content="Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em outro projeto.
+Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.
+Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™
+Introdução
+Slay the Spire é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam." />
+<meta name="author" content="" />
+<meta name="keywords" content="Python,Data Analysis,Slay the Spire," />
+
+
+
+
+
+
+  
+  <meta property="og:url" content="https://cheshireviolet.github.io/blog/sixth/">
+  <meta property="og:site_name" content="violeta">
+  <meta property="og:title" content="Slay the Spire e Análise de Dados - Parte 1">
+  <meta property="og:description" content="Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em outro projeto.
+Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.
+Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™
+Introdução Slay the Spire é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-03-04T18:25:36-03:00">
+    <meta property="article:modified_time" content="2025-03-04T18:25:36-03:00">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Data Analysis">
+    <meta property="article:tag" content="Slay the Spire">
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Slay the Spire e Análise de Dados - Parte 1">
+  <meta name="twitter:description" content="Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em outro projeto.
+Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.
+Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™
+Introdução Slay the Spire é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.">
+
+
+  
+  
+  <meta itemprop="name" content="Slay the Spire e Análise de Dados - Parte 1">
+  <meta itemprop="description" content="Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em outro projeto.
+Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.
+Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™
+Introdução Slay the Spire é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.">
+  <meta itemprop="datePublished" content="2025-03-04T18:25:36-03:00">
+  <meta itemprop="dateModified" content="2025-03-04T18:25:36-03:00">
+  <meta itemprop="wordCount" content="1776">
+  <meta itemprop="keywords" content="Python,Data Analysis,Slay the Spire">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+    
+    <link href="/syntax.min.css" rel="stylesheet">
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>violeta</h1></a>
+<nav>
+  <a href="/">Home</a>
+
+  <a href="/blog/">Blog</a>
+
+<a href='https://cheshireviolet.github.io/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Slay the Spire e Análise de Dados - Parte 1</h1>
+<p class="byline">
+  <time datetime='2025-03-04' pubdate>
+    04-03-2025
+  </time>
+  
+</p>
+<div class="post-content">
+    
+    
+</div>
+
+<content>
+  <p>Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em <strong>outro projeto</strong>.</p>
+<p>Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.</p>
+<p><strong>Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™</strong></p>
+<h2 id="introdução">Introdução</h2>
+<p><a href="https://store.steampowered.com/app/646570/Slay_the_Spire/">Slay the Spire</a> é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.</p>
+<p>Comecei a jogar lá quando o jogo estava em Early Access, a atualmente tenho aproximadamente <strong>870 horas.</strong> É meu jogo de conforto e facilmente um dos meus jogos preferidos de todos os tempos.</p>
+<p>Logo quando o jogo saiu, os desenvolvedores pegavam dados das runs (<strong>com seu consentimento</strong>) para realizar o balanceamento do jogo, mas os mesmos também ficam guardados localmente, em arquivos <strong>.run</strong> que na verdade são JSON.</p>
+<p>Foi uma ideia que deu super certo para os desenvolvedores, o jogo é ridiculamente bem balanceado, com exceção da última personagem lançada, a Watcher, que não recebeu o mesmo carinho de anos de Análise de Dados e patches.</p>
+<p>Como é um formato super acessível e leve, houveram diversos projetos ao longo do tempo, super legais, que envolvem esses arquivos.</p>
+<p>Existia o SpireLogs, aonde usuários podiam fazer upload de suas runs e então ver dados sobre suas vitórias, derrotas, personagens, cartas, relíquias, mas também podia comparar com todas as outras runs que haviam sido carregadas.</p>
+<p>Atualmente existe o <a href="https://slaythereport.kojim.net/">Slay the Report</a>(em jp), aonde usuários também podem fazer upload e download de runs.</p>
+<p>Sempre houve esse carinho, tanto pela parte dos desenvolvedores quanto pelos jogadores.</p>
+<p>Estou lentamente retornando para a área de dados, então resolvi realizar projetos relacionados, e nada melhor do que pegar uma paixão para trabalhar em cima, né?</p>
+<h2 id="objetivo">Objetivo</h2>
+<p>Meus objetivos iniciais eram, em nenhuma ordem de importância: Aprender Pandas, Seaborn e PowerBI/Tableau.</p>
+<p>Na maior parte da minha vida, em projetos pessoais envolvendo dados eu sempre usei Excel/Google Spreadsheets, mas nisso meus relatórios, apesar de pontuais, não são tão bonitos e engraçadinhos como querem atualmente no mercado de trabalho. Ao mesmo tempo, usar alguma linguagem de programação e bibliotecas relacionadas pode agilizar bastante o processo. Pensei em aprender R, mas eu já mexo com python, então deixa o R pro futuro próximo, a fila está meio grande e o tempo é curto.</p>
+<h2 id="estrutura-do-projeto">Estrutura do Projeto</h2>
+<p>Não gosto de revelar a grande ideia final por trás de todos os passos, mas dá para já dar uma palhinha inicial. A complexidade não vem dos passos em si.</p>
+<ul>
+<li><strong>Extração:</strong> Para algumas coisas, posso utilizar os .run que ficam guardados localmente, para projetos maiores posso pegar runs de lugares como Slay the Report ou datasets espalhados por aí. Para o primeiro caso, já criei um script curtinho em Python que lê todas as runs e as guarda sem edição em um arquivo só, para facilitar processos futuros.</li>
+<li><strong>Normalização:</strong> O post desse mês basicamente será quase inteiro sobre normalização dos dados, já que apesar de extremamente útil, os dados da run são&hellip;bagunçados&hellip;para poupar as palavras que usei pra reclamar sobre reclamando com amigos.</li>
+<li><strong>Análise:</strong> Por que a gente precisa usar os dados para alguma coisa né? Eu tenho algumas ideias básicas e outras mais ousadas sobre o que quero fazer, mas fica pra depois. :p</li>
+<li><strong>Visualização:</strong> Vai ser o ponto que eu vou tentar ignorar ao máximo mesmo sendo algo que eu precisava aprender meio com urgência. Pelo lado bom, decidi que vou focar em Tableau e Seaborn para isso, PowerBI por algum motivo trava quando eu tento exportar os dados de <strong>meras</strong> 600 runs, pffft.</li>
+</ul>
+<h2 id="extração">Extração</h2>
+<p>Não tem muito a ser falado aqui, começando com projetos menores, em poucas linhas consegui pegar todos os .run e salvar tudo em um grande .json com os dados intactos, usando o <strong>run_id</strong>(uuid) dos próprios arquivos para evitar duplicidade. Também só guardei runs que não forem dailies, visto que os modificadores impactam bastante quase tudo que acontece.</p>
+<h2 id="normalização---parte-1-a-parte-fácil">Normalização - Parte 1 (a parte fácil)</h2>
+<p>Apesar de todos os arquivos serem .run que vieram do mesmo jogo, é necessária uma normalização, já que tem várias chaves que são inúteis ou redundantes, como <code>is_prod</code>, que era usada durante a alpha. Como não tenho runs o bastante pois sempre esqueço de ligar, também removi as chaves relacionadas a mods, como os status específicos de cada relíquia.</p>
+<p>Outra parte importante é normalizar tipagem de algumas coisas, visto que em alguns lugares os andares do jogo estão como inteiros, e em outros como float (sempre vai ser um número inteiro).</p>
+<p>Também tem algumas coisas engraçadinhas, as classes estão definidas como <code>DEFECT, IRONCLAD, WATCHER</code>, mas a Silent está como <code>THE_SILENT</code>.</p>
+<p>Várias cartas, relíquias e eventos estão com nomes da Beta, coisas com apóstrofo as vezes perdem espaçamento, enfim.</p>
+<p>Não é tão difícil, mas é super importante, para que a base de dados seja reliable a longo prazo sem manutenção.</p>
+<h2 id="normalização---parte-2-eu-vou-explodir">Normalização - Parte 2 (eu vou explodir)</h2>
+<p>Nem tudo são flores. Um dos meus objetivos é converter as runs em um formato que seja possível ver EXATAMENTE qual foi a decisão do player e suas alternativas (quando possível). Slay the Spire é um jogo cheio de decisões e possibilidades, e o log das decisões é baseado, em sua grande parte, em como vai aparecer no <strong>Match History</strong>.</p>
+<p>Então vamos supor que eu queira recriar os dados do andar <strong>7</strong>. Okay, segundo a chave <code>path_per_floor[7]</code>, o resultado é <code>?</code>, que significa que pode ser um evento, ou outra coisa como um combate ou um baú do tesouro.</p>
+<p>Ainda tenho que ver com calma se vai ser <strong>sempre</strong> assim, mas nesse caso era um Tesouro, que é possível verificar pelo <code>path_taken[7]</code>, que retorna <code>T</code>.</p>
+<p>Até aí okay, mas e se eu te falar que <code>path_per_floor</code> tem <strong>56</strong> valores nessa run, enquanto <strong>path_taken</strong> tem <strong>52</strong>? É explicável, mas para automatizar isso você já tem que criar a primeira exceção. Mesmo que fosse usado só o <code>path_taken</code>, que é mais preciso, a run teve, segundo <code>max_floor</code>, <strong>57</strong> floors. Ironicamente, outros valores que são separados por andar possuem no máximo <strong>55</strong>.</p>
+<p>Deixe-me te explicar enquanto eu crio mais uma dúvida na sua cabeça:</p>
+<p>Pelo próprio jogo, no match history, uma run começa no andar <strong>1</strong> e vai até o andar <strong>57</strong>. No Andar <strong>1</strong> sempre vai começar com um <code>M</code> (batalha contra monstro normal).</p>
+<p><code>path_per_floor</code> considera todos os andares do jogo, incluindo os que não foram tomadas decisões, que estão ali como <code>null</code>. Em uma run na dificuldade mais alta, que vai o mais longe possível, as ocorrências de <code>null</code> são após o primeiro e segundo bosses, aonde você vai para um andar abrir um baú de tesouro, após o terceiro boss, em que você irá usar chaves para abrir o caminho secreto, e logo após o heart, que representa o fim do jogo. <code>56 - 4 = 52</code>, a conta bate, graças a deus.</p>
+<p>Mas e por que <code>max_floor</code> é 57? ÓTIMA PERGUNTA, não existe um motivo, mas minha interpretação pessoal é que o jogo considera o evento do <code>Neow</code>, que precede todas as runs, como um andar.</p>
+<p>Antes de toda run começar, a grandiosa baleia Neow lhe oferece algumas opções para facilitar sua vida na run. Quanto melhor a recompensa, maior o risco, podendo lhe dar dano, retirar seu gold, e, às vezes, lhe dar uma curse. A blessing fica em <code>neow_bonus</code>, enquanto o custo fica em <code>neow_cost</code>.</p>
+<p>Parece simples né? NÃO.</p>
+<p>Vou usar uma run de exemplo, o <code>neow_bonus</code> foi <code>ONE_RARE_RELIC</code>. Qual relic? Vamos descobrir!</p>
+<p>existe o <code>relics_obtained</code>, que nesse caso está assim:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="s2">&#34;relics_obtained&#34;</span><span class="err">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="nt">&#34;floor&#34;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">        <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;Turnip&#34;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="nt">&#34;floor&#34;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;Boot&#34;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="nt">&#34;floor&#34;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;Gremlin Horn&#34;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="p">]</span></span></span></code></pre></div><p>A primeira relíquia da lista é uma <code>Turnip</code>, só que ela foi adquirida no andar <code>6</code>, em um tesouro.</p>
+<p>Existe algum outro lugar? Graças a deus existe! A chave <code>relics</code>:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="ln">1</span><span class="cl"><span class="s2">&#34;relics&#34;</span><span class="err">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="s2">&#34;Cracked Core&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="s2">&#34;Gambling Chip&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="s2">&#34;Turnip&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="s2">&#34;Boot&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="s2">&#34;Gremlin Horn&#34;</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">]</span></span></span></code></pre></div><p>Com as informações passadas, é possível deduzir que a relíquia obtida foi <code>Gambling Chip</code>, já que a <code>Cracked Core</code> é a relíquia inicial da classe <code>DEFECT</code>.</p>
+<p>Para automatizar isso, uma pessoa poderia dizer para usar o segundo item da lista ao detectar o evento, mas infelizmente existe uma exceção que tornaria essa ideia errada:</p>
+<ul>
+<li>Existe um evento aonde pedem uma relíquia sua em troca de outra relíquia, é possível que a relíquia obtida nesse evento suma, a nova relíquia vai para o final da fila.</li>
+</ul>
+<p>Isso torna fazer um track apropriado das relíquias uma tarefa bem difícil. E a Curse?</p>
+<p><code>card_choices</code> começa com a escolha do primeiro combate, e possui apenas escolhas que envolvem opções.</p>
+<p>Vamos ver todas as cartas em <code>master_deck</code>:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="s2">&#34;master_deck&#34;</span><span class="err">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="s2">&#34;AscendersBane&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="s2">&#34;Strike_B&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="s2">&#34;Strike_B&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="s2">&#34;Strike_B&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="s2">&#34;Strike_B&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="s2">&#34;Defend_B&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="s2">&#34;Defend_B&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="s2">&#34;Defend_B&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="s2">&#34;Defend_B&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="s2">&#34;Zap+1&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="s2">&#34;Dualcast&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="s2">&#34;Doom and Gloom&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="s2">&#34;Coolheaded&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="s2">&#34;Coolheaded&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="s2">&#34;Undo&#34;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="p">]</span></span></span></code></pre></div><p>A única curse no deck é <code>AscendersBane</code>, que é adicionada em todo deck após uma certa dificuldade. Para não extender demais, encontramos em <code>event_choices</code>, que segue esse formato:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="s2">&#34;event_choices&#34;</span><span class="err">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">            <span class="nt">&#34;cards_removed&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">                <span class="s2">&#34;Doubt&#34;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">            <span class="p">],</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">            <span class="nt">&#34;damage_healed&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">            <span class="nt">&#34;gold_gain&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">            <span class="nt">&#34;player_choice&#34;</span><span class="p">:</span> <span class="s2">&#34;Card Removal&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">            <span class="nt">&#34;damage_taken&#34;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">            <span class="nt">&#34;max_hp_gain&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">            <span class="nt">&#34;max_hp_loss&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">            <span class="nt">&#34;event_name&#34;</span><span class="p">:</span> <span class="s2">&#34;Golden Wing&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">            <span class="nt">&#34;floor&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">            <span class="nt">&#34;gold_loss&#34;</span><span class="p">:</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">        <span class="p">},</span></span></span></code></pre></div><p>Achamos a curse! Dá para deduzir pois ela foi removida logo cedo, no andar 2 (o andar 1 sempre vai ser um combate). Mas não existia menção a ela em nenhum lugar.</p>
+<p>Ainda sobre <code>event_choices</code>, existe um evento com vampiros, que substituem cartas <code>strike</code> no seu deck por cartas <code>bite</code>. Apesar de no exemplo acima ter <code>cards_removed</code>, nesse outro já não tem.</p>
+<p>Um dos meus objetivos é conseguir guardar as <code>decisões</code> tomadas em todos os andares e o <code>game state</code>, na medida do possível (não tem log detalhado das batalhas, por exemplo), mas essas inconsistências geram várias mini-exceções chatas de lidar.</p>
+<p>Existem dois jeitos de guardar o <code>game state</code> e as <code>decisões</code> por turno de forma prática:</p>
+<ul>
+<li>
+<p>Ir de trás pra frente, pegar o estado do jogo no ultimo andar da run, e tentar fazer backtrack para preencher possíveis lacunas.</p>
+</li>
+<li>
+<p>Preencher os dados com Place Holders, que serão meticulosamente investigados e substituídos conforme a run avança.</p>
+</li>
+</ul>
+<p>Enfim, esse é outro projeto que parecia muito mais simples na minha cabeça.</p>
+<p>Mais um projeto que será lentamente atualizado, mas pelo menos agora estou anotando o progresso com esses posts.</p>
+<p>Obrigada a todos que leram, até a próxima!</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/tags/python/">#python</a>
+  
+    <a class="blog-tags" href="/tags/data-analysis/">#data analysis</a>
+  
+    <a class="blog-tags" href="/tags/slay-the-spire/">#slay the spire</a>
+  
+</p>
+
+
+
+
+  </main>
+  <footer><small>
+   | 
+</small></footer>
+
+    
+</body>
+
+</html>

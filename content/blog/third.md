@@ -7,7 +7,7 @@ tags = ['Machine Learning']
 
 ## Introdução
 
-**AVISO:** Por mais que seja possível treinar um modelo utilizando a CPU, é um processo extremamente mais demorado do que poderia ser, pela sua própria sanidade, usa o Google Colab se possível. Ou alguma distro de linux.
+**AVISO:** Por mais que seja possível treinar um modelo utilizando a CPU, é um processo extremamente mais demorado do que poderia ser, pela sua própria sanidade, use o Google Collab se possível. Ou alguma distro de linux.
 
 Um dos exercícios do Bootcamp de machine learning que estou realizando é realizar exatamente o que diz no título desse post. No caso, a parte de ser no windows é por eu ser cabeça dura demais para só usar o Google Collab e não ter problemas.
 
