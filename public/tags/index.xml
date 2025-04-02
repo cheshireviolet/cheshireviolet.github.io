@@ -2,73 +2,97 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on violeta</title>
-    <link>https://cheshireviolet.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on violeta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Tue, 04 Mar 2025 18:25:36 -0300</lastBuildDate>
-    <atom:link href="https://cheshireviolet.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Apr 2025 14:13:08 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Data Analysis</title>
-      <link>https://cheshireviolet.github.io/tags/data-analysis/</link>
-      <pubDate>Tue, 04 Mar 2025 18:25:36 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/tags/data-analysis/</guid>
+      <title>Code Obfuscation</title>
+      <link>http://localhost:1313/tags/code-obfuscation/</link>
+      <pubDate>Tue, 01 Apr 2025 14:13:08 -0300</pubDate>
+      <guid>http://localhost:1313/tags/code-obfuscation/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    <item>
+      <title>Computer Science</title>
+      <link>http://localhost:1313/tags/computer-science/</link>
+      <pubDate>Tue, 01 Apr 2025 14:13:08 -0300</pubDate>
+      <guid>http://localhost:1313/tags/computer-science/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     <item>
       <title>Python</title>
-      <link>https://cheshireviolet.github.io/tags/python/</link>
+      <link>http://localhost:1313/tags/python/</link>
+      <pubDate>Tue, 01 Apr 2025 14:13:08 -0300</pubDate>
+      <guid>http://localhost:1313/tags/python/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    <item>
+      <title>Silly</title>
+      <link>http://localhost:1313/tags/silly/</link>
+      <pubDate>Tue, 01 Apr 2025 14:13:08 -0300</pubDate>
+      <guid>http://localhost:1313/tags/silly/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    <item>
+      <title>Data Analysis</title>
+      <link>http://localhost:1313/tags/data-analysis/</link>
       <pubDate>Tue, 04 Mar 2025 18:25:36 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/tags/python/</guid>
+      <guid>http://localhost:1313/tags/data-analysis/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     <item>
       <title>Slay the Spire</title>
-      <link>https://cheshireviolet.github.io/tags/slay-the-spire/</link>
+      <link>http://localhost:1313/tags/slay-the-spire/</link>
       <pubDate>Tue, 04 Mar 2025 18:25:36 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/tags/slay-the-spire/</guid>
+      <guid>http://localhost:1313/tags/slay-the-spire/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     <item>
       <title>Project Mono</title>
-      <link>https://cheshireviolet.github.io/tags/project-mono/</link>
+      <link>http://localhost:1313/tags/project-mono/</link>
       <pubDate>Tue, 25 Feb 2025 16:50:27 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/tags/project-mono/</guid>
+      <guid>http://localhost:1313/tags/project-mono/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     <item>
       <title>Reverse Engineering</title>
-      <link>https://cheshireviolet.github.io/tags/reverse-engineering/</link>
+      <link>http://localhost:1313/tags/reverse-engineering/</link>
       <pubDate>Tue, 25 Feb 2025 16:50:27 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/tags/reverse-engineering/</guid>
+      <guid>http://localhost:1313/tags/reverse-engineering/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     <item>
       <title>Personal</title>
-      <link>https://cheshireviolet.github.io/tags/personal/</link>
+      <link>http://localhost:1313/tags/personal/</link>
       <pubDate>Fri, 10 Jan 2025 00:55:51 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/tags/personal/</guid>
+      <guid>http://localhost:1313/tags/personal/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     <item>
       <title>Machine Learning</title>
-      <link>https://cheshireviolet.github.io/tags/machine-learning/</link>
+      <link>http://localhost:1313/tags/machine-learning/</link>
       <pubDate>Tue, 03 Dec 2024 01:43:07 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/tags/machine-learning/</guid>
+      <guid>http://localhost:1313/tags/machine-learning/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     <item>
       <title>Leetcode</title>
-      <link>https://cheshireviolet.github.io/tags/leetcode/</link>
+      <link>http://localhost:1313/tags/leetcode/</link>
       <pubDate>Mon, 02 Dec 2024 01:50:58 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/tags/leetcode/</guid>
+      <guid>http://localhost:1313/tags/leetcode/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>

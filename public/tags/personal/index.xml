@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Personal on violeta</title>
-    <link>https://cheshireviolet.github.io/tags/personal/</link>
+    <link>http://localhost:1313/tags/personal/</link>
     <description>Recent content in Personal on violeta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Fri, 10 Jan 2025 00:55:51 -0300</lastBuildDate>
-    <atom:link href="https://cheshireviolet.github.io/tags/personal/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/personal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ano novo</title>
-      <link>https://cheshireviolet.github.io/blog/fourth/</link>
+      <link>http://localhost:1313/blog/fourth/</link>
       <pubDate>Fri, 10 Jan 2025 00:55:51 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/blog/fourth/</guid>
+      <guid>http://localhost:1313/blog/fourth/</guid>
       <description>&lt;p&gt;Primeiramente, feliz ano novo a todos! Esse post veio um pouco tarde, mas aconteceu bastante coisa na minha vida recentemente. Além disso, ano novo é sempre aquela correria toda.&lt;/p&gt;&#xA;&lt;p&gt;Não gosto de metas de ano novo pois elas mais me atrapalham e diminuem minha força de vontade do que o oposto, mas tenho algumas ideias que pretendo realizar esse ano.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-terminar-o-choncho-adventure-e-minhas-bibliotecas-de-desenvolvimento&#34;&gt;1. Terminar o Choncho Adventure e minhas bibliotecas de desenvolvimento&lt;/h2&gt;&#xA;&lt;p&gt;Esse é o objetivo que mais é algo concreto e não só uma ideia. Comecei a trabalhar nesse joguinho chamado Choncho Adventure, utilizando MonoGame no lugar de uma Game Engine moderna. Isso significa que estou fazendo absolutamente tudo do zero.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Primeiramente, feliz ano novo a todos! Esse post veio um pouco tarde, mas aconteceu bastante coisa na minha vida recentemente. Além disso, ano novo é sempre aquela correria toda.</p>
 <p>Não gosto de metas de ano novo pois elas mais me atrapalham e diminuem minha força de vontade do que o oposto, mas tenho algumas ideias que pretendo realizar esse ano.</p>
@@ -39,9 +39,9 @@
     </item>
     <item>
       <title>O primeiro post é sempre o mais confuso</title>
-      <link>https://cheshireviolet.github.io/blog/first/</link>
+      <link>http://localhost:1313/blog/first/</link>
       <pubDate>Wed, 27 Nov 2024 20:35:43 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/blog/first/</guid>
+      <guid>http://localhost:1313/blog/first/</guid>
       <description>&lt;p&gt;Bom, vamos lá né. Primeiro post é sempre complicado, você tem que se apresentar, mas já tem uma micro apresentação na página inicial. Palavras são difíceis, porque introdução nunca é o que você realmente quer falar sobre.&lt;/p&gt;&#xA;&lt;p&gt;A ideia de criar esse blog surgiu da vontade de falar sobre meus projetos, porém fora do padrão microblogging. Às vezes você tem uma ideia muito boa porém despedaçar em mini posts e futuramente perder tudo é&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;chato.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Bom, vamos lá né. Primeiro post é sempre complicado, você tem que se apresentar, mas já tem uma micro apresentação na página inicial. Palavras são difíceis, porque introdução nunca é o que você realmente quer falar sobre.</p>
 <p>A ideia de criar esse blog surgiu da vontade de falar sobre meus projetos, porém fora do padrão microblogging. Às vezes você tem uma ideia muito boa porém despedaçar em mini posts e futuramente perder tudo é&hellip;&hellip;&hellip;&hellip;chato.</p>

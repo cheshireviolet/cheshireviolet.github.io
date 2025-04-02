@@ -2,21 +2,171 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Blog on violeta</title>
-    <link>https://cheshireviolet.github.io/blog/</link>
+    <link>http://localhost:1313/blog/</link>
     <description>Recent content in Blog on violeta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Tue, 04 Mar 2025 18:25:36 -0300</lastBuildDate>
-    <atom:link href="https://cheshireviolet.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Apr 2025 14:13:08 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quine ofuscada</title>
+      <link>http://localhost:1313/blog/quine/</link>
+      <pubDate>Tue, 01 Apr 2025 14:13:08 -0300</pubDate>
+      <guid>http://localhost:1313/blog/quine/</guid>
+      <description>&lt;p&gt;Olá amigos! Novamente estou aqui, com algo que não é relacionado aos posts anteriores :D&lt;/p&gt;&#xA;&lt;p&gt;O prazo para o projeto e esse post é de &lt;strong&gt;24 horas&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Antes de dormir, estava pensando em &lt;strong&gt;Quines&lt;/strong&gt;, que são códigos que retornam eles mesmos (sem ler o próprio arquivo), e como gostava muito desse conceito que quebrava minha cabecinha simples quando era jovem.&lt;/p&gt;&#xA;&lt;p&gt;Aí pensei um pouco mais, e como seria uma &lt;strong&gt;quine ofuscada&lt;/strong&gt;?&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Olá amigos! Novamente estou aqui, com algo que não é relacionado aos posts anteriores :D</p>
+<p>O prazo para o projeto e esse post é de <strong>24 horas</strong>.</p>
+<p>Antes de dormir, estava pensando em <strong>Quines</strong>, que são códigos que retornam eles mesmos (sem ler o próprio arquivo), e como gostava muito desse conceito que quebrava minha cabecinha simples quando era jovem.</p>
+<p>Aí pensei um pouco mais, e como seria uma <strong>quine ofuscada</strong>?</p>
+<p>Recentemente tenho visto muitos videos do <a href="https://www.youtube.com/@_JohnHammond"><strong>John Rammond</strong></a>, aonde ele desbrava no mundo de análise de malware, tenho que interpretar código ofuscado. Não sei <strong>nada</strong> real sobre ofuscação de código, mas vi bastante videos dele para entender que dá pra brincar bastante com isso!</p>
+<p>O desafio de fazer uma Quine ofuscada envolve fazer algo que seja consistente e confuso.</p>
+<h2 id="a-quine">A Quine</h2>
+<p>Peguei da wikipedia, será a base. Fazendo em python pra salvar tempo usando Jupyter no VSCode.</p>
+<p><code>c = 'c = %r; print(c %% c)'; print(c % c)</code></p>
+<p>A ideia inicial era pegar e criar métodos, então renomear tudo pra ficar confuso, pensando nisso, cheguei no seguinte código:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">def</span> <span class="nf">asd</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="n">qwe</span> <span class="o">=</span> <span class="s1">&#39;def asd()</span><span class="se">\n\t</span><span class="s1">qwe = </span><span class="si">%r</span><span class="s1">;</span><span class="se">\n\t</span><span class="s1">print(qwe </span><span class="si">%%</span><span class="s1"> qwe)</span><span class="se">\n</span><span class="s1">asd()&#39;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">qwe</span> <span class="o">%</span> <span class="n">qwe</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">asd</span><span class="p">()</span></span></span></code></pre></div><p>Não é muito inspirador, é só uma quine levemente mais longa. Então pensei em fazer uma função que substitui os \n:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">def</span> <span class="nf">barraN</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="n">_temp</span> <span class="o">=</span> <span class="mi">55</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="n">_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">_temp</span><span class="p">))</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">_temp</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="n">_str</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">_num</span><span class="p">)</span> <span class="o">+</span> <span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">_num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="k">return</span> <span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">_str</span><span class="p">))</span></span></span></code></pre></div><p>Fazer uma Quine com isso é meio longo e trabalhoso, então simplifiquei um pouco, por agora:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">def</span> <span class="nf">barraN</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="s2">&#34;def barraN():</span><span class="si">{0}</span><span class="se">\t</span><span class="s2">return &#39;</span><span class="se">\\</span><span class="s2">n&#39;</span><span class="si">{0}</span><span class="s2">a = </span><span class="si">{1}{0}</span><span class="s2">print(a.format(barraN(),repr(a)))&#34;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">barraN</span><span class="p">(),</span><span class="nb">repr</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span></span></span></code></pre></div><p>Cheatando levemente por usar repr(a), que retorna a propria string de forma pura, com aspas, por exemplo. Mas o ponto não é ser boa em quines, e sim ofuscar isso tudo.</p>
+<h2 id="tentativa-1-compressão">Tentativa 1: Compressão</h2>
+<p>Vendo o código acima, dá pra brincar um pouco mais com a string final, usando a mesma lógica do barraN. Se fossemos comprimir a string <strong>a</strong>, daria pra, por exemplo, fazer algo assim:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">n</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">def</span> <span class="nf">t</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">def</span> <span class="nf">d</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;def &#39;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">def</span> <span class="nf">r</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;return &#39;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="si">{3}</span><span class="s2">n():</span><span class="si">{0}{1}{4}</span><span class="s2">&#39;</span><span class="se">\\</span><span class="s2">n&#39;</span><span class="si">{0}{3}</span><span class="s2">t():</span><span class="si">{0}{1}{4}</span><span class="s2">&#39;</span><span class="se">\\</span><span class="s2">t&#39;</span><span class="si">{0}{3}</span><span class="s2">d():</span><span class="si">{0}{1}{4}</span><span class="s2">&#39;</span><span class="si">{3}</span><span class="s2">&#39;</span><span class="si">{0}{3}</span><span class="s2">r():</span><span class="si">{0}{1}{4}</span><span class="s2">&#39;</span><span class="si">{4}</span><span class="s2">&#39;</span><span class="si">{0}</span><span class="s2">a = </span><span class="si">{2}{0}</span><span class="s2">print(a.format(n(),t(),repr(a),d(),r()))&#34;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">(),</span><span class="n">t</span><span class="p">(),</span><span class="nb">repr</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="n">d</span><span class="p">(),</span><span class="n">r</span><span class="p">()))</span></span></span></code></pre></div><p>Todas as repetições de 3 ou mais caracteres foram comprimidas, e a string em si já está levemente confusa.</p>
+<p>Indo por essa linha, podemos ver que existem duas repetições grandes na string <strong>a</strong>: <strong>{0}{3}</strong> e <strong>{0}{1}{4}</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">n</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">def</span> <span class="nf">t</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">def</span> <span class="nf">d</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;def &#39;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">def</span> <span class="nf">r</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;return &#39;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">def</span> <span class="nf">z</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{0}{1}{4}</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="k">def</span> <span class="nf">y</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{0}{3}</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="s2">&#34;{{3}}n():</span><span class="si">{0}</span><span class="s2">&#39;</span><span class="se">\\</span><span class="s2">n&#39;</span><span class="si">{1}</span><span class="s2">t():</span><span class="si">{0}</span><span class="s2">&#39;</span><span class="se">\\</span><span class="s2">t&#39;</span><span class="si">{1}</span><span class="s2">d():</span><span class="si">{0}</span><span class="s2">&#39;{{3}}&#39;</span><span class="si">{1}</span><span class="s2">r():</span><span class="si">{0}</span><span class="s2">&#39;{{4}}&#39;</span><span class="si">{1}</span><span class="s2">z():</span><span class="si">{0}</span><span class="s2">&#39;{{5}}&#39;</span><span class="si">{1}</span><span class="s2">y():</span><span class="si">{0}</span><span class="s2">&#39;{{6}}&#39;{{0}}a = {{2}}{{0}}print(a.format(z(),y(),repr(a)).format(n(),t(),repr(a),d(),r(),z(),y()))&#34;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">z</span><span class="p">(),</span><span class="n">y</span><span class="p">(),</span><span class="nb">repr</span><span class="p">(</span><span class="n">a</span><span class="p">))</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">(),</span><span class="n">t</span><span class="p">(),</span><span class="nb">repr</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="n">d</span><span class="p">(),</span><span class="n">r</span><span class="p">(),</span><span class="n">z</span><span class="p">(),</span><span class="n">y</span><span class="p">()))</span></span></span></code></pre></div><p>Bom. Agora a string está gigantesca, e tudo está confuso, fiquei embasbacada em como prosseguir.</p>
+<p>O problema é que para conseguir comprimir o z() e o y(), tivemos que criar um novo format, por cima do format antigo.</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">n</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">def</span> <span class="nf">t</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">def</span> <span class="nf">d</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;def &#39;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">def</span> <span class="nf">r</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;return &#39;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">def</span> <span class="nf">z</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{0}{1}{4}</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="k">def</span> <span class="nf">y</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{0}{3}</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;.format(&#39;</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="s2">&#34;{{3}}n():</span><span class="si">{0}</span><span class="s2">&#39;</span><span class="se">\\</span><span class="s2">n&#39;</span><span class="si">{1}</span><span class="s2">t():</span><span class="si">{0}</span><span class="s2">&#39;</span><span class="se">\\</span><span class="s2">t&#39;</span><span class="si">{1}</span><span class="s2">d():</span><span class="si">{0}</span><span class="s2">&#39;{{3}}&#39;</span><span class="si">{1}</span><span class="s2">r():</span><span class="si">{0}</span><span class="s2">&#39;{{4}}&#39;</span><span class="si">{1}</span><span class="s2">z():</span><span class="si">{0}</span><span class="s2">&#39;{{5}}&#39;</span><span class="si">{1}</span><span class="s2">y():</span><span class="si">{0}</span><span class="s2">&#39;{{6}}&#39;</span><span class="si">{1}</span><span class="s2">f():</span><span class="si">{0}</span><span class="s2">&#39;{{7}}&#39;{{0}}a = {{2}}{{0}}print(a{{7}}z(),y(),repr(a)){{7}}n(),t(),repr(a),d(),r(),z(),y(),f()))&#34;</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">z</span><span class="p">(),</span><span class="n">y</span><span class="p">(),</span><span class="nb">repr</span><span class="p">(</span><span class="n">a</span><span class="p">))</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">(),</span><span class="n">t</span><span class="p">(),</span><span class="nb">repr</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="n">d</span><span class="p">(),</span><span class="n">r</span><span class="p">(),</span><span class="n">z</span><span class="p">(),</span><span class="n">y</span><span class="p">(),</span><span class="n">f</span><span class="p">()))</span></span></span></code></pre></div><p>Enquanto o que exatamente está sendo printado é confuso, não diria que o código está ofuscado, e os milhões de método entregam, mais ou menos.</p>
+<h2 id="tentativa-2-exec">Tentativa 2: Exec</h2>
+<p>Tentei, para fins de teste, fazer uma das versões simples, utilizando exec para criar funções em tempo real:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">def</span> <span class="nf">n</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="s2">&#34;def n():</span><span class="si">{0}</span><span class="se">\t</span><span class="s2">return &#39;</span><span class="se">\\</span><span class="s2">n&#39;</span><span class="si">{0}</span><span class="s2">a = </span><span class="si">{1}{0}</span><span class="s2">print(a.format(n(),repr(a)))&#34;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">(),</span><span class="nb">repr</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span></span></span></code></pre></div>
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;def a(x,y): exec(f</span><span class="se">\&#39;</span><span class="s1">def </span><span class="si">{x}</span><span class="s1">(): return </span><span class="se">\&#34;</span><span class="si">{y}</span><span class="se">\&#34;\&#39;</span><span class="s1">,globals())&#39;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">exec</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">a</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">n&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">q</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">exec(b)</span><span class="si">{0}</span><span class="s1">a(</span><span class="se">\&#39;</span><span class="s1">n</span><span class="se">\&#39;</span><span class="s1">,</span><span class="se">\&#39;\\\\</span><span class="s1">n</span><span class="se">\&#39;</span><span class="s1">)</span><span class="si">{0}</span><span class="s1">q = </span><span class="si">{1}{0}</span><span class="s1">print(b + q.format(n(),repr(q)))&#39;</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">q</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">(),</span><span class="nb">repr</span><span class="p">(</span><span class="n">q</span><span class="p">)))</span></span></span></code></pre></div><p>Não estou exatamente impressionada, mas dá para melhorar.</p>
+<p>Comparando essa versão base, são <strong>126</strong> caracteres contra <strong>205</strong>.</p>
+<p>Uma coisa engraçadinha que eu percebi nisso tudo&hellip;&hellip;&hellip;é que uma função para imprimir <strong>\n</strong> vai sempre aumentar em 1 caractere. <strong>&ldquo;NOSSAAAAAAAAA SÓ PERCEBEU AGORA??&rdquo;</strong> Pergunta leitor frustrado. Sim, só agora. Sou besta.</p>
+<p>Após ter oitenta bilhões de problemas com , &quot; e  &lsquo;, decidi que vou me contentar com essa versão mesmo. Mas estou longe de terminar.</p>
+<h2 id="ultima-tentativa-juro">Ultima tentativa, juro</h2>
+<p>Peguei o algoritmo mais bestinha de criptografia que não usasse biblioteca:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="s2">&#34;def e(t): return &#39;&#39;.join(chr(ord(c)^456)for c in t)&#34;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">exec</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">q</span> <span class="o">=</span> <span class="s1">&#39;ƩǨǵǨƳǸƵǂƭưƭƫǠƩǡǂƹǨǵǨƳǹƵǂƸƺơƦƼǠƭǠƹǡǦƮƧƺƥƩƼǠƺƭƸƺǠƩǡǤƺƭƸƺǠƹǡǡǡ&#39;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">(</span><span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nb">repr</span><span class="p">(</span><span class="n">q</span><span class="p">)))</span></span></span></code></pre></div><p>Gostei bastante de ter feito essa quine, basicamente aquele bloco estranho é igual a <code>'a = {0}\nexec(a)\nq = {1}\nprint(e(q).format(repr(a),repr(q)))'</code></p>
+<p>Está simples e engraçadinho, mas ainda dá pra ver que no final das contas estamos printando algo que veio de <strong>q</strong>.</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="s2">&#34;def e(t): return &#39;&#39;.join(chr(ord(c)^456)for c in t)</span><span class="se">\n</span><span class="s2">c = repr(a)&#34;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">exec</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;ƭưƭƫǠǪƪǨǵǨǯƩǨǵǨƳǸƵƔƔƦƭưƭƫǠƩǡƔƔƦƩǨǵǨƳǹƵƔƔƦƭưƭƫǠƭǠƩǡǡǯƔƦƸƺơƦƼǠƪǦƮƧƺƥƩƼǠƫǤƺƭƸƺǠƩǡǡǡǪǤƯƤƧƪƩƤƻǠǡǡ&#39;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">exec</span><span class="p">(</span><span class="n">e</span><span class="p">(</span><span class="n">a</span><span class="p">))</span></span></span></code></pre></div><p>Levemente mais engraçado, agora não dá pra saber o que vai ser executado. Estou feliz, PUTA MERDA ESQUECI DO EPISÓDIO DE HOJE DA NOVELA.</p>
+<p>Espero que tenham gostado fuiiiiiiii!</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Slay the Spire e Análise de Dados - Parte 1</title>
-      <link>https://cheshireviolet.github.io/blog/sixth/</link>
+      <link>http://localhost:1313/blog/sixth/</link>
       <pubDate>Tue, 04 Mar 2025 18:25:36 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/blog/sixth/</guid>
-      <description>&lt;p&gt;Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em &lt;strong&gt;outro projeto&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://store.steampowered.com/app/646570/Slay_the_Spire/&#34;&gt;Slay the Spire&lt;/a&gt; é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/sixth/</guid>
+      <description>&lt;p&gt;Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em &lt;strong&gt;outro projeto&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.&lt;/p&gt;&#xA;&lt;h3 id=&#34;tudo-que-foi-falado-aqui-vai-ser-divulgado-bonitinho-no-github-mesmo-soon-&#34;&gt;Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™&lt;/h3&gt;&#xA;&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://store.steampowered.com/app/646570/Slay_the_Spire/&#34;&gt;Slay the Spire&lt;/a&gt; é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em <strong>outro projeto</strong>.</p>
 <p>Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.</p>
-<p><strong>Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™</strong></p>
+<h3 id="tudo-que-foi-falado-aqui-vai-ser-divulgado-bonitinho-no-github-mesmo-soon-">Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™</h3>
 <h2 id="introdução">Introdução</h2>
 <p><a href="https://store.steampowered.com/app/646570/Slay_the_Spire/">Slay the Spire</a> é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.</p>
 <p>Comecei a jogar lá quando o jogo estava em Early Access, a atualmente tenho aproximadamente <strong>870 horas.</strong> É meu jogo de conforto e facilmente um dos meus jogos preferidos de todos os tempos.</p>
@@ -153,14 +303,14 @@
 </ul>
 <p>Enfim, esse é outro projeto que parecia muito mais simples na minha cabeça.</p>
 <p>Mais um projeto que será lentamente atualizado, mas pelo menos agora estou anotando o progresso com esses posts.</p>
-<p>Obrigada a todos que leram, até a próxima!</p>
+<p>Obrigada a todos que leram, até a próxima</p>
 ]]></content:encoded>
     </item>
     <item>
       <title>Project Mono Parte 1 - Fiquei Maluca</title>
-      <link>https://cheshireviolet.github.io/blog/fifth/</link>
+      <link>http://localhost:1313/blog/fifth/</link>
       <pubDate>Tue, 25 Feb 2025 16:50:27 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/blog/fifth/</guid>
+      <guid>http://localhost:1313/blog/fifth/</guid>
       <description>&lt;p&gt;Bom dia amigos, espero que todos estejam bem! Estive trabalhando no Choncho Adventure enquanto aprendo Pixel Art, fazendo entrevistas de emprego e tentando relaxar. Passei em uma vaga de dados, começo mês que vem! Ai que saudades de um excelzinho!&lt;/p&gt;&#xA;&lt;p&gt;Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a parte 1 de minha saga em engenharia reversa.&lt;/p&gt;&#xA;&lt;h2 id=&#34;scripts-autohotkey-e-preguiça&#34;&gt;Scripts, AutoHotKey e Preguiça&lt;/h2&gt;&#xA;&lt;p&gt;Lá por 2013~2014 conheci o joguinho Clicker Heroes, na Steam. Fiquei viciada e isso mudou drasticamente minha vida, desde então sempre estou jogando algum jogo Incremental ou Idle. Nessa época, acabei encontrando um Script para AutoHotKey, que fazia prestígios no jogo de forma automática, em loop. Extremamente prático, salvou muito tempo da minha vida.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Bom dia amigos, espero que todos estejam bem! Estive trabalhando no Choncho Adventure enquanto aprendo Pixel Art, fazendo entrevistas de emprego e tentando relaxar. Passei em uma vaga de dados, começo mês que vem! Ai que saudades de um excelzinho!</p>
 <p>Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a parte 1 de minha saga em engenharia reversa.</p>
@@ -191,9 +341,9 @@
     </item>
     <item>
       <title>Ano novo</title>
-      <link>https://cheshireviolet.github.io/blog/fourth/</link>
+      <link>http://localhost:1313/blog/fourth/</link>
       <pubDate>Fri, 10 Jan 2025 00:55:51 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/blog/fourth/</guid>
+      <guid>http://localhost:1313/blog/fourth/</guid>
       <description>&lt;p&gt;Primeiramente, feliz ano novo a todos! Esse post veio um pouco tarde, mas aconteceu bastante coisa na minha vida recentemente. Além disso, ano novo é sempre aquela correria toda.&lt;/p&gt;&#xA;&lt;p&gt;Não gosto de metas de ano novo pois elas mais me atrapalham e diminuem minha força de vontade do que o oposto, mas tenho algumas ideias que pretendo realizar esse ano.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-terminar-o-choncho-adventure-e-minhas-bibliotecas-de-desenvolvimento&#34;&gt;1. Terminar o Choncho Adventure e minhas bibliotecas de desenvolvimento&lt;/h2&gt;&#xA;&lt;p&gt;Esse é o objetivo que mais é algo concreto e não só uma ideia. Comecei a trabalhar nesse joguinho chamado Choncho Adventure, utilizando MonoGame no lugar de uma Game Engine moderna. Isso significa que estou fazendo absolutamente tudo do zero.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Primeiramente, feliz ano novo a todos! Esse post veio um pouco tarde, mas aconteceu bastante coisa na minha vida recentemente. Além disso, ano novo é sempre aquela correria toda.</p>
 <p>Não gosto de metas de ano novo pois elas mais me atrapalham e diminuem minha força de vontade do que o oposto, mas tenho algumas ideias que pretendo realizar esse ano.</p>
@@ -220,9 +370,9 @@
     </item>
     <item>
       <title>Compilando a Darknet no Windows 10 e treinando modelo com a YOLOv3</title>
-      <link>https://cheshireviolet.github.io/blog/third/</link>
+      <link>http://localhost:1313/blog/third/</link>
       <pubDate>Tue, 03 Dec 2024 01:43:07 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/blog/third/</guid>
+      <guid>http://localhost:1313/blog/third/</guid>
       <description>&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;AVISO:&lt;/strong&gt; Por mais que seja possível treinar um modelo utilizando a CPU, é um processo extremamente mais demorado do que poderia ser, pela sua própria sanidade, use o Google Collab se possível. Ou alguma distro de linux.&lt;/p&gt;&#xA;&lt;p&gt;Um dos exercícios do Bootcamp de machine learning que estou realizando é realizar exatamente o que diz no título desse post. No caso, a parte de ser no windows é por eu ser cabeça dura demais para só usar o Google Collab e não ter problemas.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="introdução">Introdução</h2>
 <p><strong>AVISO:</strong> Por mais que seja possível treinar um modelo utilizando a CPU, é um processo extremamente mais demorado do que poderia ser, pela sua própria sanidade, use o Google Collab se possível. Ou alguma distro de linux.</p>
@@ -334,9 +484,9 @@
     </item>
     <item>
       <title>Leetcode 128. Longest Consecutive Sequence</title>
-      <link>https://cheshireviolet.github.io/blog/second/</link>
+      <link>http://localhost:1313/blog/second/</link>
       <pubDate>Mon, 02 Dec 2024 01:50:58 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/blog/second/</guid>
+      <guid>http://localhost:1313/blog/second/</guid>
       <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;&#xA;&lt;p&gt;Recentemente eu comecei a fazer os desafios do leetcode criado como &lt;a href=&#34;https://leetcode.com/studyplan/top-interview-150/&#34;&gt;problemas de entrevistas da FAANG&lt;/a&gt;, tanto pra refrescar noções de estruturas de dados quanto para praticar python, já que de modo geral por mim faço tudo em C#.&lt;/p&gt;&#xA;&lt;p&gt;Aproveitar a introdução para agradecer a &lt;a href=&#34;https://navendu.me/posts/adding-diagrams-to-your-hugo-blog-with-mermaid/&#34;&gt;este post&lt;/a&gt; pelo tutorial de como implementar mermaid em um fórum feito em hugo, graças ao post não precisei desenhar as árvores, e sim usar markdown :D&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="intro">Intro</h2>
 <p>Recentemente eu comecei a fazer os desafios do leetcode criado como <a href="https://leetcode.com/studyplan/top-interview-150/">problemas de entrevistas da FAANG</a>, tanto pra refrescar noções de estruturas de dados quanto para praticar python, já que de modo geral por mim faço tudo em C#.</p>
@@ -485,9 +635,9 @@ Também adicionamos no dicionário de sequencias, sua sequencia sendo 1.</p>
     </item>
     <item>
       <title>O primeiro post é sempre o mais confuso</title>
-      <link>https://cheshireviolet.github.io/blog/first/</link>
+      <link>http://localhost:1313/blog/first/</link>
       <pubDate>Wed, 27 Nov 2024 20:35:43 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/blog/first/</guid>
+      <guid>http://localhost:1313/blog/first/</guid>
       <description>&lt;p&gt;Bom, vamos lá né. Primeiro post é sempre complicado, você tem que se apresentar, mas já tem uma micro apresentação na página inicial. Palavras são difíceis, porque introdução nunca é o que você realmente quer falar sobre.&lt;/p&gt;&#xA;&lt;p&gt;A ideia de criar esse blog surgiu da vontade de falar sobre meus projetos, porém fora do padrão microblogging. Às vezes você tem uma ideia muito boa porém despedaçar em mini posts e futuramente perder tudo é&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;chato.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Bom, vamos lá né. Primeiro post é sempre complicado, você tem que se apresentar, mas já tem uma micro apresentação na página inicial. Palavras são difíceis, porque introdução nunca é o que você realmente quer falar sobre.</p>
 <p>A ideia de criar esse blog surgiu da vontade de falar sobre meus projetos, porém fora do padrão microblogging. Às vezes você tem uma ideia muito boa porém despedaçar em mini posts e futuramente perder tudo é&hellip;&hellip;&hellip;&hellip;chato.</p>

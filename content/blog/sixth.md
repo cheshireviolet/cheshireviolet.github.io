@@ -9,7 +9,7 @@ Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Advent
 
 Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.
 
-**Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™**
+### Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™
 
 ## Introdução
 
@@ -187,4 +187,4 @@ Enfim, esse é outro projeto que parecia muito mais simples na minha cabeça.
 
 Mais um projeto que será lentamente atualizado, mas pelo menos agora estou anotando o progresso com esses posts.
 
-Obrigada a todos que leram, até a próxima!
+Obrigada a todos que leram, até a próxima

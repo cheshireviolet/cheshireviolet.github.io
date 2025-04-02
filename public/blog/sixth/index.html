@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="https://cheshireviolet.github.io/images/favicon.png" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
 <title>Slay the Spire e Análise de Dados - Parte 1 | violeta</title>
 <meta name="title" content="Slay the Spire e Análise de Dados - Parte 1" />
 <meta name="description" content="Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em outro projeto.
@@ -22,13 +22,12 @@ Slay the Spire é um jogo da categoria Roguelike Deckbuilder, não sei dizer se 
 
 
   
-  <meta property="og:url" content="https://cheshireviolet.github.io/blog/sixth/">
+  <meta property="og:url" content="http://localhost:1313/blog/sixth/">
   <meta property="og:site_name" content="violeta">
   <meta property="og:title" content="Slay the Spire e Análise de Dados - Parte 1">
   <meta property="og:description" content="Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em outro projeto.
 Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.
-Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™
-Introdução Slay the Spire é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.">
+Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™ Introdução Slay the Spire é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
@@ -45,8 +44,7 @@ Introdução Slay the Spire é um jogo da categoria Roguelike Deckbuilder, não 
   <meta name="twitter:title" content="Slay the Spire e Análise de Dados - Parte 1">
   <meta name="twitter:description" content="Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em outro projeto.
 Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.
-Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™
-Introdução Slay the Spire é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.">
+Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™ Introdução Slay the Spire é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.">
 
 
   
@@ -54,8 +52,7 @@ Introdução Slay the Spire é um jogo da categoria Roguelike Deckbuilder, não 
   <meta itemprop="name" content="Slay the Spire e Análise de Dados - Parte 1">
   <meta itemprop="description" content="Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em outro projeto.
 Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.
-Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™
-Introdução Slay the Spire é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.">
+Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™ Introdução Slay the Spire é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.">
   <meta itemprop="datePublished" content="2025-03-04T18:25:36-03:00">
   <meta itemprop="dateModified" content="2025-03-04T18:25:36-03:00">
   <meta itemprop="wordCount" content="1776">
@@ -85,7 +82,7 @@ Introdução Slay the Spire é um jogo da categoria Roguelike Deckbuilder, não 
 
   <a href="/blog/">Blog</a>
 
-<a href='https://cheshireviolet.github.io/index.xml'>RSS</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
 
 
 
@@ -112,7 +109,7 @@ Introdução Slay the Spire é um jogo da categoria Roguelike Deckbuilder, não 
 <content>
   <p>Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em <strong>outro projeto</strong>.</p>
 <p>Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.</p>
-<p><strong>Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™</strong></p>
+<h3 id="tudo-que-foi-falado-aqui-vai-ser-divulgado-bonitinho-no-github-mesmo-soon-">Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™</h3>
 <h2 id="introdução">Introdução</h2>
 <p><a href="https://store.steampowered.com/app/646570/Slay_the_Spire/">Slay the Spire</a> é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.</p>
 <p>Comecei a jogar lá quando o jogo estava em Early Access, a atualmente tenho aproximadamente <strong>870 horas.</strong> É meu jogo de conforto e facilmente um dos meus jogos preferidos de todos os tempos.</p>
@@ -249,7 +246,7 @@ Introdução Slay the Spire é um jogo da categoria Roguelike Deckbuilder, não 
 </ul>
 <p>Enfim, esse é outro projeto que parecia muito mais simples na minha cabeça.</p>
 <p>Mais um projeto que será lentamente atualizado, mas pelo menos agora estou anotando o progresso com esses posts.</p>
-<p>Obrigada a todos que leram, até a próxima!</p>
+<p>Obrigada a todos que leram, até a próxima</p>
 
 </content>
 <p>

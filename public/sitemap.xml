@@ -2,57 +2,69 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://cheshireviolet.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-04-01T14:13:08-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2025-04-01T14:13:08-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/code-obfuscation/</loc>
+    <lastmod>2025-04-01T14:13:08-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/computer-science/</loc>
+    <lastmod>2025-04-01T14:13:08-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/python/</loc>
+    <lastmod>2025-04-01T14:13:08-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/quine/</loc>
+    <lastmod>2025-04-01T14:13:08-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/silly/</loc>
+    <lastmod>2025-04-01T14:13:08-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-04-01T14:13:08-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/data-analysis/</loc>
     <lastmod>2025-03-04T18:25:36-03:00</lastmod>
   </url><url>
-    <loc>https://cheshireviolet.github.io/blog/</loc>
+    <loc>http://localhost:1313/tags/slay-the-spire/</loc>
     <lastmod>2025-03-04T18:25:36-03:00</lastmod>
   </url><url>
-    <loc>https://cheshireviolet.github.io/tags/data-analysis/</loc>
+    <loc>http://localhost:1313/blog/sixth/</loc>
     <lastmod>2025-03-04T18:25:36-03:00</lastmod>
   </url><url>
-    <loc>https://cheshireviolet.github.io/tags/python/</loc>
-    <lastmod>2025-03-04T18:25:36-03:00</lastmod>
-  </url><url>
-    <loc>https://cheshireviolet.github.io/tags/slay-the-spire/</loc>
-    <lastmod>2025-03-04T18:25:36-03:00</lastmod>
-  </url><url>
-    <loc>https://cheshireviolet.github.io/blog/sixth/</loc>
-    <lastmod>2025-03-04T18:25:36-03:00</lastmod>
-  </url><url>
-    <loc>https://cheshireviolet.github.io/tags/</loc>
-    <lastmod>2025-03-04T18:25:36-03:00</lastmod>
-  </url><url>
-    <loc>https://cheshireviolet.github.io/tags/project-mono/</loc>
+    <loc>http://localhost:1313/tags/project-mono/</loc>
     <lastmod>2025-02-25T16:50:27-03:00</lastmod>
   </url><url>
-    <loc>https://cheshireviolet.github.io/blog/fifth/</loc>
+    <loc>http://localhost:1313/blog/fifth/</loc>
     <lastmod>2025-02-25T16:50:27-03:00</lastmod>
   </url><url>
-    <loc>https://cheshireviolet.github.io/tags/reverse-engineering/</loc>
+    <loc>http://localhost:1313/tags/reverse-engineering/</loc>
     <lastmod>2025-02-25T16:50:27-03:00</lastmod>
   </url><url>
-    <loc>https://cheshireviolet.github.io/blog/fourth/</loc>
+    <loc>http://localhost:1313/blog/fourth/</loc>
     <lastmod>2025-01-10T00:55:51-03:00</lastmod>
   </url><url>
-    <loc>https://cheshireviolet.github.io/tags/personal/</loc>
+    <loc>http://localhost:1313/tags/personal/</loc>
     <lastmod>2025-01-10T00:55:51-03:00</lastmod>
   </url><url>
-    <loc>https://cheshireviolet.github.io/blog/third/</loc>
+    <loc>http://localhost:1313/blog/third/</loc>
     <lastmod>2024-12-03T01:43:07-03:00</lastmod>
   </url><url>
-    <loc>https://cheshireviolet.github.io/tags/machine-learning/</loc>
+    <loc>http://localhost:1313/tags/machine-learning/</loc>
     <lastmod>2024-12-03T01:43:07-03:00</lastmod>
   </url><url>
-    <loc>https://cheshireviolet.github.io/tags/leetcode/</loc>
+    <loc>http://localhost:1313/tags/leetcode/</loc>
     <lastmod>2024-12-02T01:50:58-03:00</lastmod>
   </url><url>
-    <loc>https://cheshireviolet.github.io/blog/second/</loc>
+    <loc>http://localhost:1313/blog/second/</loc>
     <lastmod>2024-12-02T01:50:58-03:00</lastmod>
   </url><url>
-    <loc>https://cheshireviolet.github.io/blog/first/</loc>
+    <loc>http://localhost:1313/blog/first/</loc>
     <lastmod>2024-11-27T20:35:43-03:00</lastmod>
   </url><url>
-    <loc>https://cheshireviolet.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>
