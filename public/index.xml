@@ -16,7 +16,7 @@
       <description>&lt;p&gt;Bom dia amigos! Fazia tempo que não postava nada. Últimos 2 meses foram extremamente corridos, muita bagunça e adversidades, mas consegui fazer algo a tempo de manter 1 post por mês.&lt;/p&gt;&#xA;&lt;p&gt;Uma das trends que sigo no BlueSky (que persiste por uns 10 anos?) é a de postar uma colagem dos álbuns mais ouvidos. Existem vários sites que fazem isso, como TapMusic. Gosto bastante, mas gostaria que tivessem mais númerozinhos engraçadinhos.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Bom dia amigos! Fazia tempo que não postava nada. Últimos 2 meses foram extremamente corridos, muita bagunça e adversidades, mas consegui fazer algo a tempo de manter 1 post por mês.</p>
 <p>Uma das trends que sigo no BlueSky (que persiste por uns 10 anos?) é a de postar uma colagem dos álbuns mais ouvidos. Existem vários sites que fazem isso, como TapMusic. Gosto bastante, mas gostaria que tivessem mais númerozinhos engraçadinhos.</p>
-<p><img src="static/lastfm/collage.jpg" alt="Colagem TapMusic"></p>
+<p><img src="https://github.com/cheshireviolet/cheshireviolet.github.io/blob/main/content/blog/static/lastfm/collage.jpg" alt="Colagem TapMusic"></p>
 <p>Foi aí que decidi adicionar estatísticas a respeito dos álbuns que escuto! Apesar de ser relativamente simples, decidi utilizar uma abordagem mais técnica e escalável, para o futuro.</p>
 <h2 id="camada-bronze---o-e-de-etl">Camada Bronze - O E de ETL</h2>
 <p>Antes de tudo, precisamos alimentar nossa base. O Last.fm disponibiliza uma API gratuita, que possui um método <code>user.gettopalbums</code>. Bem conveniente, basta colocar usuário, api key, período de tempo e recebemos tudo que precisamos.</p>
@@ -28,7 +28,7 @@
 <h2 id="o-l-de-etl">O L de ETL</h2>
 <p>Como o projeto não é suficientemente grande, a camada Ouro e a camada Prata são a mesma.</p>
 <p>Para finalizar o projeto, basta baixar as imagens e usar a biblioteca <strong>PIL</strong> para gerar a colagem e adicionar o texto com as estatísticas.</p>
-<p><img src="static/lastfm/collage2.jpg" alt="Colagem Final!"></p>
+<p><img src="https://github.com/cheshireviolet/cheshireviolet.github.io/blob/main/content/blog/static/lastfm/collage2.jpg" alt="Colagem Final!"></p>
 <p>Existem alguns ajustes a serem feitos, como uma fonte melhor e alguns status extras, mas pretendo atualizar nas próximas semanas.</p>
 <p>Também pretendo, assim que tiver tempo, colocar todo esse serviço na nuvem, possibilitando outras pessoas de utilizarem o serviço. Fazer uma WebAPI em Azure e talvez usar algum banco gratuito ,visto que mesmo com licença de estudante acaba ficando caro a curto prazo.</p>
 <p>Gostei muito de fazer esse projeto, mas a minha parte preferida dele é que não ficou só num protótipo. :P</p>

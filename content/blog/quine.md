@@ -2,7 +2,7 @@
 date = '2025-04-01T14:13:08-03:00'
 draft = false
 title = 'Quine ofuscada'
-tags = ['Python', 'Code Obfuscation', 'Computer Science', 'Silly']
+tags = ['Python', 'Code Obfuscation', 'Silly']
 +++
 
 Olá amigos! Novamente estou aqui, com algo que não é relacionado aos posts anteriores :D

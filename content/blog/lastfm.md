@@ -9,7 +9,7 @@ Bom dia amigos! Fazia tempo que não postava nada. Últimos 2 meses foram extrem
 
 Uma das trends que sigo no BlueSky (que persiste por uns 10 anos?) é a de postar uma colagem dos álbuns mais ouvidos. Existem vários sites que fazem isso, como TapMusic. Gosto bastante, mas gostaria que tivessem mais númerozinhos engraçadinhos.
 
-![Colagem TapMusic](static/lastfm/collage.jpg)
+![Colagem TapMusic](https://github.com/cheshireviolet/cheshireviolet.github.io/blob/main/content/blog/static/lastfm/collage.jpg)
 
 Foi aí que decidi adicionar estatísticas a respeito dos álbuns que escuto! Apesar de ser relativamente simples, decidi utilizar uma abordagem mais técnica e escalável, para o futuro.
 
@@ -33,7 +33,7 @@ Como o projeto não é suficientemente grande, a camada Ouro e a camada Prata s�
 
 Para finalizar o projeto, basta baixar as imagens e usar a biblioteca **PIL** para gerar a colagem e adicionar o texto com as estatísticas.
 
-![Colagem Final!](static/lastfm/collage2.jpg)
+![Colagem Final!](https://github.com/cheshireviolet/cheshireviolet.github.io/blob/main/content/blog/static/lastfm/collage2.jpg)
 
 Existem alguns ajustes a serem feitos, como uma fonte melhor e alguns status extras, mas pretendo atualizar nas próximas semanas.
 
