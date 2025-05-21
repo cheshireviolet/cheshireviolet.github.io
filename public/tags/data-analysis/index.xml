@@ -2,17 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Data Analysis on violeta</title>
-    <link>http://localhost:1313/tags/data-analysis/</link>
+    <link>https://cheshireviolet.github.io/tags/data-analysis/</link>
     <description>Recent content in Data Analysis on violeta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Tue, 04 Mar 2025 18:25:36 -0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 May 2025 18:35:34 -0300</lastBuildDate>
+    <atom:link href="https://cheshireviolet.github.io/tags/data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Lake com estatísticas do Last.fm</title>
+      <link>https://cheshireviolet.github.io/blog/lastfm/</link>
+      <pubDate>Wed, 21 May 2025 18:35:34 -0300</pubDate>
+      <guid>https://cheshireviolet.github.io/blog/lastfm/</guid>
+      <description>&lt;p&gt;Bom dia amigos! Fazia tempo que não postava nada. Últimos 2 meses foram extremamente corridos, muita bagunça e adversidades, mas consegui fazer algo a tempo de manter 1 post por mês.&lt;/p&gt;&#xA;&lt;p&gt;Uma das trends que sigo no BlueSky (que persiste por uns 10 anos?) é a de postar uma colagem dos álbuns mais ouvidos. Existem vários sites que fazem isso, como TapMusic. Gosto bastante, mas gostaria que tivessem mais númerozinhos engraçadinhos.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Bom dia amigos! Fazia tempo que não postava nada. Últimos 2 meses foram extremamente corridos, muita bagunça e adversidades, mas consegui fazer algo a tempo de manter 1 post por mês.</p>
+<p>Uma das trends que sigo no BlueSky (que persiste por uns 10 anos?) é a de postar uma colagem dos álbuns mais ouvidos. Existem vários sites que fazem isso, como TapMusic. Gosto bastante, mas gostaria que tivessem mais númerozinhos engraçadinhos.</p>
+<p><img src="static/lastfm/collage.jpg" alt="Colagem TapMusic"></p>
+<p>Foi aí que decidi adicionar estatísticas a respeito dos álbuns que escuto! Apesar de ser relativamente simples, decidi utilizar uma abordagem mais técnica e escalável, para o futuro.</p>
+<h2 id="camada-bronze---o-e-de-etl">Camada Bronze - O E de ETL</h2>
+<p>Antes de tudo, precisamos alimentar nossa base. O Last.fm disponibiliza uma API gratuita, que possui um método <code>user.gettopalbums</code>. Bem conveniente, basta colocar usuário, api key, período de tempo e recebemos tudo que precisamos.</p>
+<p>A API deles retorna um JSON que tem vários dados que são irrelevantes, então pego apenas <strong>artista</strong>, <strong>nome do album</strong>, <strong>playcount</strong>, <strong>rank</strong> e um <strong>link da imagem de capa do album</strong> e salvo, junto a data do dia da extração em um JSON.</p>
+<h2 id="camada-prata---o-t-de-etl">Camada Prata - O T DE ETL</h2>
+<p>Para os dados brutos, um simples JSON já resolve tudo. Para a segunda camada, decidi utilizar um banco de dados simples em <strong>SQLite</strong>, utilizando <strong>SQLAlchemy</strong> para a conexão e queries, visto que funciona perfeitamente com <strong>pandas</strong>.</p>
+<p>Criei uma tabela para os artistas e uma tabela para os álbuns, o que facilita agregar dados específicos.</p>
+<p>Por último, criei uma tabela com algumas estatísticas, que é atualizada com o tempo, conforme ganhamos novas entradas.</p>
+<h2 id="o-l-de-etl">O L de ETL</h2>
+<p>Como o projeto não é suficientemente grande, a camada Ouro e a camada Prata são a mesma.</p>
+<p>Para finalizar o projeto, basta baixar as imagens e usar a biblioteca <strong>PIL</strong> para gerar a colagem e adicionar o texto com as estatísticas.</p>
+<p><img src="static/lastfm/collage2.jpg" alt="Colagem Final!"></p>
+<p>Existem alguns ajustes a serem feitos, como uma fonte melhor e alguns status extras, mas pretendo atualizar nas próximas semanas.</p>
+<p>Também pretendo, assim que tiver tempo, colocar todo esse serviço na nuvem, possibilitando outras pessoas de utilizarem o serviço. Fazer uma WebAPI em Azure e talvez usar algum banco gratuito ,visto que mesmo com licença de estudante acaba ficando caro a curto prazo.</p>
+<p>Gostei muito de fazer esse projeto, mas a minha parte preferida dele é que não ficou só num protótipo. :P</p>
+<p>Até a próxima!</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Slay the Spire e Análise de Dados - Parte 1</title>
-      <link>http://localhost:1313/blog/sixth/</link>
+      <link>https://cheshireviolet.github.io/blog/sixth/</link>
       <pubDate>Tue, 04 Mar 2025 18:25:36 -0300</pubDate>
-      <guid>http://localhost:1313/blog/sixth/</guid>
+      <guid>https://cheshireviolet.github.io/blog/sixth/</guid>
       <description>&lt;p&gt;Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em &lt;strong&gt;outro projeto&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.&lt;/p&gt;&#xA;&lt;h3 id=&#34;tudo-que-foi-falado-aqui-vai-ser-divulgado-bonitinho-no-github-mesmo-soon-&#34;&gt;Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™&lt;/h3&gt;&#xA;&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://store.steampowered.com/app/646570/Slay_the_Spire/&#34;&gt;Slay the Spire&lt;/a&gt; é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em <strong>outro projeto</strong>.</p>
 <p>Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.</p>

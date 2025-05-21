@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://cheshireviolet.github.io/images/favicon.png" />
+<title>Data Lake com estatísticas do Last.fm | violeta</title>
+<meta name="title" content="Data Lake com estatísticas do Last.fm" />
+<meta name="description" content="Bom dia amigos! Fazia tempo que não postava nada. Últimos 2 meses foram extremamente corridos, muita bagunça e adversidades, mas consegui fazer algo a tempo de manter 1 post por mês.
+Uma das trends que sigo no BlueSky (que persiste por uns 10 anos?) é a de postar uma colagem dos álbuns mais ouvidos. Existem vários sites que fazem isso, como TapMusic. Gosto bastante, mas gostaria que tivessem mais númerozinhos engraçadinhos." />
+<meta name="author" content="" />
+<meta name="keywords" content="Python,Data Analysis," />
+
+
+
+
+
+
+  
+  <meta property="og:url" content="https://cheshireviolet.github.io/blog/lastfm/">
+  <meta property="og:site_name" content="violeta">
+  <meta property="og:title" content="Data Lake com estatísticas do Last.fm">
+  <meta property="og:description" content="Bom dia amigos! Fazia tempo que não postava nada. Últimos 2 meses foram extremamente corridos, muita bagunça e adversidades, mas consegui fazer algo a tempo de manter 1 post por mês.
+Uma das trends que sigo no BlueSky (que persiste por uns 10 anos?) é a de postar uma colagem dos álbuns mais ouvidos. Existem vários sites que fazem isso, como TapMusic. Gosto bastante, mas gostaria que tivessem mais númerozinhos engraçadinhos.">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-05-21T18:35:34-03:00">
+    <meta property="article:modified_time" content="2025-05-21T18:35:34-03:00">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Data Analysis">
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Data Lake com estatísticas do Last.fm">
+  <meta name="twitter:description" content="Bom dia amigos! Fazia tempo que não postava nada. Últimos 2 meses foram extremamente corridos, muita bagunça e adversidades, mas consegui fazer algo a tempo de manter 1 post por mês.
+Uma das trends que sigo no BlueSky (que persiste por uns 10 anos?) é a de postar uma colagem dos álbuns mais ouvidos. Existem vários sites que fazem isso, como TapMusic. Gosto bastante, mas gostaria que tivessem mais númerozinhos engraçadinhos.">
+
+
+  
+  
+  <meta itemprop="name" content="Data Lake com estatísticas do Last.fm">
+  <meta itemprop="description" content="Bom dia amigos! Fazia tempo que não postava nada. Últimos 2 meses foram extremamente corridos, muita bagunça e adversidades, mas consegui fazer algo a tempo de manter 1 post por mês.
+Uma das trends que sigo no BlueSky (que persiste por uns 10 anos?) é a de postar uma colagem dos álbuns mais ouvidos. Existem vários sites que fazem isso, como TapMusic. Gosto bastante, mas gostaria que tivessem mais númerozinhos engraçadinhos.">
+  <meta itemprop="datePublished" content="2025-05-21T18:35:34-03:00">
+  <meta itemprop="dateModified" content="2025-05-21T18:35:34-03:00">
+  <meta itemprop="wordCount" content="392">
+  <meta itemprop="keywords" content="Python,Data Analysis">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>violeta</h1></a>
+<nav>
+  <a href="/">Home</a>
+
+  <a href="/blog/">Blog</a>
+
+<a href='https://cheshireviolet.github.io/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Data Lake com estatísticas do Last.fm</h1>
+<p class="byline">
+  <time datetime='2025-05-21' pubdate>
+    21-05-2025
+  </time>
+  
+</p>
+<div class="post-content">
+    
+    
+</div>
+
+<content>
+  <p>Bom dia amigos! Fazia tempo que não postava nada. Últimos 2 meses foram extremamente corridos, muita bagunça e adversidades, mas consegui fazer algo a tempo de manter 1 post por mês.</p>
+<p>Uma das trends que sigo no BlueSky (que persiste por uns 10 anos?) é a de postar uma colagem dos álbuns mais ouvidos. Existem vários sites que fazem isso, como TapMusic. Gosto bastante, mas gostaria que tivessem mais númerozinhos engraçadinhos.</p>
+<p><img src="static/lastfm/collage.jpg" alt="Colagem TapMusic"></p>
+<p>Foi aí que decidi adicionar estatísticas a respeito dos álbuns que escuto! Apesar de ser relativamente simples, decidi utilizar uma abordagem mais técnica e escalável, para o futuro.</p>
+<h2 id="camada-bronze---o-e-de-etl">Camada Bronze - O E de ETL</h2>
+<p>Antes de tudo, precisamos alimentar nossa base. O Last.fm disponibiliza uma API gratuita, que possui um método <code>user.gettopalbums</code>. Bem conveniente, basta colocar usuário, api key, período de tempo e recebemos tudo que precisamos.</p>
+<p>A API deles retorna um JSON que tem vários dados que são irrelevantes, então pego apenas <strong>artista</strong>, <strong>nome do album</strong>, <strong>playcount</strong>, <strong>rank</strong> e um <strong>link da imagem de capa do album</strong> e salvo, junto a data do dia da extração em um JSON.</p>
+<h2 id="camada-prata---o-t-de-etl">Camada Prata - O T DE ETL</h2>
+<p>Para os dados brutos, um simples JSON já resolve tudo. Para a segunda camada, decidi utilizar um banco de dados simples em <strong>SQLite</strong>, utilizando <strong>SQLAlchemy</strong> para a conexão e queries, visto que funciona perfeitamente com <strong>pandas</strong>.</p>
+<p>Criei uma tabela para os artistas e uma tabela para os álbuns, o que facilita agregar dados específicos.</p>
+<p>Por último, criei uma tabela com algumas estatísticas, que é atualizada com o tempo, conforme ganhamos novas entradas.</p>
+<h2 id="o-l-de-etl">O L de ETL</h2>
+<p>Como o projeto não é suficientemente grande, a camada Ouro e a camada Prata são a mesma.</p>
+<p>Para finalizar o projeto, basta baixar as imagens e usar a biblioteca <strong>PIL</strong> para gerar a colagem e adicionar o texto com as estatísticas.</p>
+<p><img src="static/lastfm/collage2.jpg" alt="Colagem Final!"></p>
+<p>Existem alguns ajustes a serem feitos, como uma fonte melhor e alguns status extras, mas pretendo atualizar nas próximas semanas.</p>
+<p>Também pretendo, assim que tiver tempo, colocar todo esse serviço na nuvem, possibilitando outras pessoas de utilizarem o serviço. Fazer uma WebAPI em Azure e talvez usar algum banco gratuito ,visto que mesmo com licença de estudante acaba ficando caro a curto prazo.</p>
+<p>Gostei muito de fazer esse projeto, mas a minha parte preferida dele é que não ficou só num protótipo. :P</p>
+<p>Até a próxima!</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/tags/python/">#python</a>
+  
+    <a class="blog-tags" href="/tags/data-analysis/">#data analysis</a>
+  
+</p>
+
+
+
+
+  </main>
+  <footer><small>
+   | 
+</small></footer>
+
+    
+</body>
+
+</html>

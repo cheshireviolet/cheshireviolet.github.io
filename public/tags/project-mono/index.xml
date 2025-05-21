@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Project Mono on violeta</title>
-    <link>http://localhost:1313/tags/project-mono/</link>
+    <link>https://cheshireviolet.github.io/tags/project-mono/</link>
     <description>Recent content in Project Mono on violeta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Tue, 25 Feb 2025 16:50:27 -0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/project-mono/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cheshireviolet.github.io/tags/project-mono/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Project Mono Parte 1 - Fiquei Maluca</title>
-      <link>http://localhost:1313/blog/fifth/</link>
+      <link>https://cheshireviolet.github.io/blog/fifth/</link>
       <pubDate>Tue, 25 Feb 2025 16:50:27 -0300</pubDate>
-      <guid>http://localhost:1313/blog/fifth/</guid>
+      <guid>https://cheshireviolet.github.io/blog/fifth/</guid>
       <description>&lt;p&gt;Bom dia amigos, espero que todos estejam bem! Estive trabalhando no Choncho Adventure enquanto aprendo Pixel Art, fazendo entrevistas de emprego e tentando relaxar. Passei em uma vaga de dados, começo mês que vem! Ai que saudades de um excelzinho!&lt;/p&gt;&#xA;&lt;p&gt;Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a parte 1 de minha saga em engenharia reversa.&lt;/p&gt;&#xA;&lt;h2 id=&#34;scripts-autohotkey-e-preguiça&#34;&gt;Scripts, AutoHotKey e Preguiça&lt;/h2&gt;&#xA;&lt;p&gt;Lá por 2013~2014 conheci o joguinho Clicker Heroes, na Steam. Fiquei viciada e isso mudou drasticamente minha vida, desde então sempre estou jogando algum jogo Incremental ou Idle. Nessa época, acabei encontrando um Script para AutoHotKey, que fazia prestígios no jogo de forma automática, em loop. Extremamente prático, salvou muito tempo da minha vida.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Bom dia amigos, espero que todos estejam bem! Estive trabalhando no Choncho Adventure enquanto aprendo Pixel Art, fazendo entrevistas de emprego e tentando relaxar. Passei em uma vaga de dados, começo mês que vem! Ai que saudades de um excelzinho!</p>
 <p>Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a parte 1 de minha saga em engenharia reversa.</p>

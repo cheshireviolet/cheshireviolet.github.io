@@ -2,17 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Blog on violeta</title>
-    <link>http://localhost:1313/blog/</link>
+    <link>https://cheshireviolet.github.io/blog/</link>
     <description>Recent content in Blog on violeta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Tue, 01 Apr 2025 14:13:08 -0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 May 2025 18:35:34 -0300</lastBuildDate>
+    <atom:link href="https://cheshireviolet.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Lake com estatísticas do Last.fm</title>
+      <link>https://cheshireviolet.github.io/blog/lastfm/</link>
+      <pubDate>Wed, 21 May 2025 18:35:34 -0300</pubDate>
+      <guid>https://cheshireviolet.github.io/blog/lastfm/</guid>
+      <description>&lt;p&gt;Bom dia amigos! Fazia tempo que não postava nada. Últimos 2 meses foram extremamente corridos, muita bagunça e adversidades, mas consegui fazer algo a tempo de manter 1 post por mês.&lt;/p&gt;&#xA;&lt;p&gt;Uma das trends que sigo no BlueSky (que persiste por uns 10 anos?) é a de postar uma colagem dos álbuns mais ouvidos. Existem vários sites que fazem isso, como TapMusic. Gosto bastante, mas gostaria que tivessem mais númerozinhos engraçadinhos.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Bom dia amigos! Fazia tempo que não postava nada. Últimos 2 meses foram extremamente corridos, muita bagunça e adversidades, mas consegui fazer algo a tempo de manter 1 post por mês.</p>
+<p>Uma das trends que sigo no BlueSky (que persiste por uns 10 anos?) é a de postar uma colagem dos álbuns mais ouvidos. Existem vários sites que fazem isso, como TapMusic. Gosto bastante, mas gostaria que tivessem mais númerozinhos engraçadinhos.</p>
+<p><img src="static/lastfm/collage.jpg" alt="Colagem TapMusic"></p>
+<p>Foi aí que decidi adicionar estatísticas a respeito dos álbuns que escuto! Apesar de ser relativamente simples, decidi utilizar uma abordagem mais técnica e escalável, para o futuro.</p>
+<h2 id="camada-bronze---o-e-de-etl">Camada Bronze - O E de ETL</h2>
+<p>Antes de tudo, precisamos alimentar nossa base. O Last.fm disponibiliza uma API gratuita, que possui um método <code>user.gettopalbums</code>. Bem conveniente, basta colocar usuário, api key, período de tempo e recebemos tudo que precisamos.</p>
+<p>A API deles retorna um JSON que tem vários dados que são irrelevantes, então pego apenas <strong>artista</strong>, <strong>nome do album</strong>, <strong>playcount</strong>, <strong>rank</strong> e um <strong>link da imagem de capa do album</strong> e salvo, junto a data do dia da extração em um JSON.</p>
+<h2 id="camada-prata---o-t-de-etl">Camada Prata - O T DE ETL</h2>
+<p>Para os dados brutos, um simples JSON já resolve tudo. Para a segunda camada, decidi utilizar um banco de dados simples em <strong>SQLite</strong>, utilizando <strong>SQLAlchemy</strong> para a conexão e queries, visto que funciona perfeitamente com <strong>pandas</strong>.</p>
+<p>Criei uma tabela para os artistas e uma tabela para os álbuns, o que facilita agregar dados específicos.</p>
+<p>Por último, criei uma tabela com algumas estatísticas, que é atualizada com o tempo, conforme ganhamos novas entradas.</p>
+<h2 id="o-l-de-etl">O L de ETL</h2>
+<p>Como o projeto não é suficientemente grande, a camada Ouro e a camada Prata são a mesma.</p>
+<p>Para finalizar o projeto, basta baixar as imagens e usar a biblioteca <strong>PIL</strong> para gerar a colagem e adicionar o texto com as estatísticas.</p>
+<p><img src="static/lastfm/collage2.jpg" alt="Colagem Final!"></p>
+<p>Existem alguns ajustes a serem feitos, como uma fonte melhor e alguns status extras, mas pretendo atualizar nas próximas semanas.</p>
+<p>Também pretendo, assim que tiver tempo, colocar todo esse serviço na nuvem, possibilitando outras pessoas de utilizarem o serviço. Fazer uma WebAPI em Azure e talvez usar algum banco gratuito ,visto que mesmo com licença de estudante acaba ficando caro a curto prazo.</p>
+<p>Gostei muito de fazer esse projeto, mas a minha parte preferida dele é que não ficou só num protótipo. :P</p>
+<p>Até a próxima!</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Quine ofuscada</title>
-      <link>http://localhost:1313/blog/quine/</link>
+      <link>https://cheshireviolet.github.io/blog/quine/</link>
       <pubDate>Tue, 01 Apr 2025 14:13:08 -0300</pubDate>
-      <guid>http://localhost:1313/blog/quine/</guid>
+      <guid>https://cheshireviolet.github.io/blog/quine/</guid>
       <description>&lt;p&gt;Olá amigos! Novamente estou aqui, com algo que não é relacionado aos posts anteriores :D&lt;/p&gt;&#xA;&lt;p&gt;O prazo para o projeto e esse post é de &lt;strong&gt;24 horas&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Antes de dormir, estava pensando em &lt;strong&gt;Quines&lt;/strong&gt;, que são códigos que retornam eles mesmos (sem ler o próprio arquivo), e como gostava muito desse conceito que quebrava minha cabecinha simples quando era jovem.&lt;/p&gt;&#xA;&lt;p&gt;Aí pensei um pouco mais, e como seria uma &lt;strong&gt;quine ofuscada&lt;/strong&gt;?&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Olá amigos! Novamente estou aqui, com algo que não é relacionado aos posts anteriores :D</p>
 <p>O prazo para o projeto e esse post é de <strong>24 horas</strong>.</p>
@@ -160,9 +187,9 @@
     </item>
     <item>
       <title>Slay the Spire e Análise de Dados - Parte 1</title>
-      <link>http://localhost:1313/blog/sixth/</link>
+      <link>https://cheshireviolet.github.io/blog/sixth/</link>
       <pubDate>Tue, 04 Mar 2025 18:25:36 -0300</pubDate>
-      <guid>http://localhost:1313/blog/sixth/</guid>
+      <guid>https://cheshireviolet.github.io/blog/sixth/</guid>
       <description>&lt;p&gt;Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em &lt;strong&gt;outro projeto&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.&lt;/p&gt;&#xA;&lt;h3 id=&#34;tudo-que-foi-falado-aqui-vai-ser-divulgado-bonitinho-no-github-mesmo-soon-&#34;&gt;Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™&lt;/h3&gt;&#xA;&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://store.steampowered.com/app/646570/Slay_the_Spire/&#34;&gt;Slay the Spire&lt;/a&gt; é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em <strong>outro projeto</strong>.</p>
 <p>Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.</p>
@@ -308,9 +335,9 @@
     </item>
     <item>
       <title>Project Mono Parte 1 - Fiquei Maluca</title>
-      <link>http://localhost:1313/blog/fifth/</link>
+      <link>https://cheshireviolet.github.io/blog/fifth/</link>
       <pubDate>Tue, 25 Feb 2025 16:50:27 -0300</pubDate>
-      <guid>http://localhost:1313/blog/fifth/</guid>
+      <guid>https://cheshireviolet.github.io/blog/fifth/</guid>
       <description>&lt;p&gt;Bom dia amigos, espero que todos estejam bem! Estive trabalhando no Choncho Adventure enquanto aprendo Pixel Art, fazendo entrevistas de emprego e tentando relaxar. Passei em uma vaga de dados, começo mês que vem! Ai que saudades de um excelzinho!&lt;/p&gt;&#xA;&lt;p&gt;Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a parte 1 de minha saga em engenharia reversa.&lt;/p&gt;&#xA;&lt;h2 id=&#34;scripts-autohotkey-e-preguiça&#34;&gt;Scripts, AutoHotKey e Preguiça&lt;/h2&gt;&#xA;&lt;p&gt;Lá por 2013~2014 conheci o joguinho Clicker Heroes, na Steam. Fiquei viciada e isso mudou drasticamente minha vida, desde então sempre estou jogando algum jogo Incremental ou Idle. Nessa época, acabei encontrando um Script para AutoHotKey, que fazia prestígios no jogo de forma automática, em loop. Extremamente prático, salvou muito tempo da minha vida.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Bom dia amigos, espero que todos estejam bem! Estive trabalhando no Choncho Adventure enquanto aprendo Pixel Art, fazendo entrevistas de emprego e tentando relaxar. Passei em uma vaga de dados, começo mês que vem! Ai que saudades de um excelzinho!</p>
 <p>Nisso tudo, no lugar de fazer o primeiro DevLog do jogo, começarei a contar a parte 1 de minha saga em engenharia reversa.</p>
@@ -341,9 +368,9 @@
     </item>
     <item>
       <title>Ano novo</title>
-      <link>http://localhost:1313/blog/fourth/</link>
+      <link>https://cheshireviolet.github.io/blog/fourth/</link>
       <pubDate>Fri, 10 Jan 2025 00:55:51 -0300</pubDate>
-      <guid>http://localhost:1313/blog/fourth/</guid>
+      <guid>https://cheshireviolet.github.io/blog/fourth/</guid>
       <description>&lt;p&gt;Primeiramente, feliz ano novo a todos! Esse post veio um pouco tarde, mas aconteceu bastante coisa na minha vida recentemente. Além disso, ano novo é sempre aquela correria toda.&lt;/p&gt;&#xA;&lt;p&gt;Não gosto de metas de ano novo pois elas mais me atrapalham e diminuem minha força de vontade do que o oposto, mas tenho algumas ideias que pretendo realizar esse ano.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-terminar-o-choncho-adventure-e-minhas-bibliotecas-de-desenvolvimento&#34;&gt;1. Terminar o Choncho Adventure e minhas bibliotecas de desenvolvimento&lt;/h2&gt;&#xA;&lt;p&gt;Esse é o objetivo que mais é algo concreto e não só uma ideia. Comecei a trabalhar nesse joguinho chamado Choncho Adventure, utilizando MonoGame no lugar de uma Game Engine moderna. Isso significa que estou fazendo absolutamente tudo do zero.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Primeiramente, feliz ano novo a todos! Esse post veio um pouco tarde, mas aconteceu bastante coisa na minha vida recentemente. Além disso, ano novo é sempre aquela correria toda.</p>
 <p>Não gosto de metas de ano novo pois elas mais me atrapalham e diminuem minha força de vontade do que o oposto, mas tenho algumas ideias que pretendo realizar esse ano.</p>
@@ -370,9 +397,9 @@
     </item>
     <item>
       <title>Compilando a Darknet no Windows 10 e treinando modelo com a YOLOv3</title>
-      <link>http://localhost:1313/blog/third/</link>
+      <link>https://cheshireviolet.github.io/blog/third/</link>
       <pubDate>Tue, 03 Dec 2024 01:43:07 -0300</pubDate>
-      <guid>http://localhost:1313/blog/third/</guid>
+      <guid>https://cheshireviolet.github.io/blog/third/</guid>
       <description>&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;AVISO:&lt;/strong&gt; Por mais que seja possível treinar um modelo utilizando a CPU, é um processo extremamente mais demorado do que poderia ser, pela sua própria sanidade, use o Google Collab se possível. Ou alguma distro de linux.&lt;/p&gt;&#xA;&lt;p&gt;Um dos exercícios do Bootcamp de machine learning que estou realizando é realizar exatamente o que diz no título desse post. No caso, a parte de ser no windows é por eu ser cabeça dura demais para só usar o Google Collab e não ter problemas.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="introdução">Introdução</h2>
 <p><strong>AVISO:</strong> Por mais que seja possível treinar um modelo utilizando a CPU, é um processo extremamente mais demorado do que poderia ser, pela sua própria sanidade, use o Google Collab se possível. Ou alguma distro de linux.</p>
@@ -484,9 +511,9 @@
     </item>
     <item>
       <title>Leetcode 128. Longest Consecutive Sequence</title>
-      <link>http://localhost:1313/blog/second/</link>
+      <link>https://cheshireviolet.github.io/blog/second/</link>
       <pubDate>Mon, 02 Dec 2024 01:50:58 -0300</pubDate>
-      <guid>http://localhost:1313/blog/second/</guid>
+      <guid>https://cheshireviolet.github.io/blog/second/</guid>
       <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;&#xA;&lt;p&gt;Recentemente eu comecei a fazer os desafios do leetcode criado como &lt;a href=&#34;https://leetcode.com/studyplan/top-interview-150/&#34;&gt;problemas de entrevistas da FAANG&lt;/a&gt;, tanto pra refrescar noções de estruturas de dados quanto para praticar python, já que de modo geral por mim faço tudo em C#.&lt;/p&gt;&#xA;&lt;p&gt;Aproveitar a introdução para agradecer a &lt;a href=&#34;https://navendu.me/posts/adding-diagrams-to-your-hugo-blog-with-mermaid/&#34;&gt;este post&lt;/a&gt; pelo tutorial de como implementar mermaid em um fórum feito em hugo, graças ao post não precisei desenhar as árvores, e sim usar markdown :D&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="intro">Intro</h2>
 <p>Recentemente eu comecei a fazer os desafios do leetcode criado como <a href="https://leetcode.com/studyplan/top-interview-150/">problemas de entrevistas da FAANG</a>, tanto pra refrescar noções de estruturas de dados quanto para praticar python, já que de modo geral por mim faço tudo em C#.</p>
@@ -635,9 +662,9 @@ Também adicionamos no dicionário de sequencias, sua sequencia sendo 1.</p>
     </item>
     <item>
       <title>O primeiro post é sempre o mais confuso</title>
-      <link>http://localhost:1313/blog/first/</link>
+      <link>https://cheshireviolet.github.io/blog/first/</link>
       <pubDate>Wed, 27 Nov 2024 20:35:43 -0300</pubDate>
-      <guid>http://localhost:1313/blog/first/</guid>
+      <guid>https://cheshireviolet.github.io/blog/first/</guid>
       <description>&lt;p&gt;Bom, vamos lá né. Primeiro post é sempre complicado, você tem que se apresentar, mas já tem uma micro apresentação na página inicial. Palavras são difíceis, porque introdução nunca é o que você realmente quer falar sobre.&lt;/p&gt;&#xA;&lt;p&gt;A ideia de criar esse blog surgiu da vontade de falar sobre meus projetos, porém fora do padrão microblogging. Às vezes você tem uma ideia muito boa porém despedaçar em mini posts e futuramente perder tudo é&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;chato.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Bom, vamos lá né. Primeiro post é sempre complicado, você tem que se apresentar, mas já tem uma micro apresentação na página inicial. Palavras são difíceis, porque introdução nunca é o que você realmente quer falar sobre.</p>
 <p>A ideia de criar esse blog surgiu da vontade de falar sobre meus projetos, porém fora do padrão microblogging. Às vezes você tem uma ideia muito boa porém despedaçar em mini posts e futuramente perder tudo é&hellip;&hellip;&hellip;&hellip;chato.</p>

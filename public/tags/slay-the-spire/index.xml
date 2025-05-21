@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Slay the Spire on violeta</title>
-    <link>http://localhost:1313/tags/slay-the-spire/</link>
+    <link>https://cheshireviolet.github.io/tags/slay-the-spire/</link>
     <description>Recent content in Slay the Spire on violeta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Tue, 04 Mar 2025 18:25:36 -0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/slay-the-spire/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cheshireviolet.github.io/tags/slay-the-spire/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Slay the Spire e Análise de Dados - Parte 1</title>
-      <link>http://localhost:1313/blog/sixth/</link>
+      <link>https://cheshireviolet.github.io/blog/sixth/</link>
       <pubDate>Tue, 04 Mar 2025 18:25:36 -0300</pubDate>
-      <guid>http://localhost:1313/blog/sixth/</guid>
+      <guid>https://cheshireviolet.github.io/blog/sixth/</guid>
       <description>&lt;p&gt;Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em &lt;strong&gt;outro projeto&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.&lt;/p&gt;&#xA;&lt;h3 id=&#34;tudo-que-foi-falado-aqui-vai-ser-divulgado-bonitinho-no-github-mesmo-soon-&#34;&gt;Tudo que foi falado aqui vai ser divulgado bonitinho no github mesmo, soon ™&lt;/h3&gt;&#xA;&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://store.steampowered.com/app/646570/Slay_the_Spire/&#34;&gt;Slay the Spire&lt;/a&gt; é um jogo da categoria Roguelike Deckbuilder, não sei dizer se foi o primeiro, mas foi o que influenciou tantos jogos no futuro a ponto de não ter outro tipo de recomendação na minha Steam.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em <strong>outro projeto</strong>.</p>
 <p>Tive alguns avanços trágicos no Project Mono, que vão mudar um pouco como eu levo o projeto. Aprendi muito maaaaaaaaas ficará para outro post.</p>

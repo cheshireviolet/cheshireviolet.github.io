@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Machine Learning on violeta</title>
-    <link>http://localhost:1313/tags/machine-learning/</link>
+    <link>https://cheshireviolet.github.io/tags/machine-learning/</link>
     <description>Recent content in Machine Learning on violeta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Tue, 03 Dec 2024 01:43:07 -0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cheshireviolet.github.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Compilando a Darknet no Windows 10 e treinando modelo com a YOLOv3</title>
-      <link>http://localhost:1313/blog/third/</link>
+      <link>https://cheshireviolet.github.io/blog/third/</link>
       <pubDate>Tue, 03 Dec 2024 01:43:07 -0300</pubDate>
-      <guid>http://localhost:1313/blog/third/</guid>
+      <guid>https://cheshireviolet.github.io/blog/third/</guid>
       <description>&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;AVISO:&lt;/strong&gt; Por mais que seja possível treinar um modelo utilizando a CPU, é um processo extremamente mais demorado do que poderia ser, pela sua própria sanidade, use o Google Collab se possível. Ou alguma distro de linux.&lt;/p&gt;&#xA;&lt;p&gt;Um dos exercícios do Bootcamp de machine learning que estou realizando é realizar exatamente o que diz no título desse post. No caso, a parte de ser no windows é por eu ser cabeça dura demais para só usar o Google Collab e não ter problemas.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="introdução">Introdução</h2>
 <p><strong>AVISO:</strong> Por mais que seja possível treinar um modelo utilizando a CPU, é um processo extremamente mais demorado do que poderia ser, pela sua própria sanidade, use o Google Collab se possível. Ou alguma distro de linux.</p>

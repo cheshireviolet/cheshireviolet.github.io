@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Computer Science on violeta</title>
-    <link>http://localhost:1313/tags/computer-science/</link>
+    <link>https://cheshireviolet.github.io/tags/computer-science/</link>
     <description>Recent content in Computer Science on violeta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Tue, 01 Apr 2025 14:13:08 -0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/computer-science/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cheshireviolet.github.io/tags/computer-science/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Quine ofuscada</title>
-      <link>http://localhost:1313/blog/quine/</link>
+      <link>https://cheshireviolet.github.io/blog/quine/</link>
       <pubDate>Tue, 01 Apr 2025 14:13:08 -0300</pubDate>
-      <guid>http://localhost:1313/blog/quine/</guid>
+      <guid>https://cheshireviolet.github.io/blog/quine/</guid>
       <description>&lt;p&gt;Olá amigos! Novamente estou aqui, com algo que não é relacionado aos posts anteriores :D&lt;/p&gt;&#xA;&lt;p&gt;O prazo para o projeto e esse post é de &lt;strong&gt;24 horas&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Antes de dormir, estava pensando em &lt;strong&gt;Quines&lt;/strong&gt;, que são códigos que retornam eles mesmos (sem ler o próprio arquivo), e como gostava muito desse conceito que quebrava minha cabecinha simples quando era jovem.&lt;/p&gt;&#xA;&lt;p&gt;Aí pensei um pouco mais, e como seria uma &lt;strong&gt;quine ofuscada&lt;/strong&gt;?&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Olá amigos! Novamente estou aqui, com algo que não é relacionado aos posts anteriores :D</p>
 <p>O prazo para o projeto e esse post é de <strong>24 horas</strong>.</p>
