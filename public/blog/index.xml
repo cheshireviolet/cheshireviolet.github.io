@@ -6,8 +6,52 @@
     <description>Recent content in Blog on violeta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 21 May 2025 18:35:34 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 05 Oct 2025 22:07:02 -0300</lastBuildDate>
     <atom:link href="https://cheshireviolet.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Um blog no neocities me fez voltar a fazer ctfs</title>
+      <link>https://cheshireviolet.github.io/blog/ohno/</link>
+      <pubDate>Sun, 05 Oct 2025 22:07:02 -0300</pubDate>
+      <guid>https://cheshireviolet.github.io/blog/ohno/</guid>
+      <description>&lt;p&gt;Bom dia amigos! Minha marida há algum tempo resolveu aprender HTML/CSS/JS e acabou descobrindo o incrível mundo do neocities!&lt;/p&gt;&#xA;&lt;p&gt;Nessa aventura ela me mandou um blog chamado &lt;a href=&#34;https://hello-room.neocities.org/&#34;&gt;hello room&lt;/a&gt;. Um blog de &amp;lsquo;puzzle&amp;rsquo; (nome oficial da categoria no neocities). E quando vi estava resolvendo CTFs tal qual fazia há uns 10 anos atrás. Note que, apesar de achar muito maneiro, não fui muito longe, tanto por preguiça quanto por falta de interesse &lt;strong&gt;o bastante&lt;/strong&gt;.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Bom dia amigos! Minha marida há algum tempo resolveu aprender HTML/CSS/JS e acabou descobrindo o incrível mundo do neocities!</p>
+<p>Nessa aventura ela me mandou um blog chamado <a href="https://hello-room.neocities.org/">hello room</a>. Um blog de &lsquo;puzzle&rsquo; (nome oficial da categoria no neocities). E quando vi estava resolvendo CTFs tal qual fazia há uns 10 anos atrás. Note que, apesar de achar muito maneiro, não fui muito longe, tanto por preguiça quanto por falta de interesse <strong>o bastante</strong>.</p>
+<p>Mas esse me prendeu, por um tempo. Esse post contém spoilers, então se você quer jogar, deixa pra ler depois! :D</p>
+<h2 id="big_catpng">big_cat.png</h2>
+<p>Após encontrar o link em uma porta, tem um gato e um texto em base64. Basicamente diz INVESTIGUE A MINHA IMAGEM.</p>
+<p>A imagem em questão é o big_cat.png</p>
+<p>usando um simples <code>strings</code> você acaba encontrando a solução, o link pro próximo puzzle! Bem simples, mas algo que eu não esperaria de um blog no neocities</p>
+<h2 id="big_cat_8png">big_cat_8.png</h2>
+<p>Eu fiquei MUITO tempo nesse, e foi aonde minha inexperiência realmente ficou bem clara.</p>
+<p>O <strong>big_cat</strong> perdeu uma vida, nos dá parabéns e dá uma dica: <strong>11 números em hex</strong>.</p>
+<p>Usei strings, file, identify, exiftool, hexdump, e nada. Tentei stegsolve, absolutamente nada, nadinha.</p>
+<p>Acabei entrando no discord do blog. Descobri que dá para ir na página /hint em um puzzle para descobrir algo que pode ajudar.</p>
+<p>&ldquo;A imagem vai ser importante&rdquo;. PUTA QUE PARIU. Completamente perdida. Tentei transformar o hex em caracteres, deu ruim, varios são além de caracteres legíveis.</p>
+<p>Minha pista é que o link do puzzle atual <strong>também</strong> tem 11 caracteres. Tentei achar uma relação entre os dois, sem sucesso.</p>
+<p>Pensei em usar hexdump para ver se tinham caracteres nas posições em hex que o gato falou. AÍ EU COMETI UM GRANDE ERRO: como eu migrei recente pro linux, nunca tinha usado o hexdump e o código que achei na internet não mostrava o arquivo todo (sabe-se lá o porquê), então como haviam posições que iam além do arquivo, desisti disso.</p>
+<p>Pedi ajuda no discord, falaram que eu estava correta em querer usar o hexdump. AÍ EU ENTENDI QUE NÃO ERA O DUMP COMPLETO. Completamente besta, mas minhas intenções eram boas. Ao tentar novamente, com o dump completo, consegui chegar no próximo, MAS por um erro de atenção faltou um caractere, o que me fez perguntar no discord novamente e a pessoa ficar muito &ldquo;putz tão perto acho q vc esqueceu de uma letra aí&rdquo;. <strong>Que vergonha, sério</strong>.</p>
+<h2 id="big_cat_7png">big_cat_7.png</h2>
+<p><strong>&ldquo;Okay, no more clues, now I want to watch you struggle.&rdquo;</strong></p>
+<p>EU JÁ ESTAVA STRUGGLING, mas tudo bem! Ao clicar no <strong>big_cat</strong>, é baixado um struggle.zip, que contém uma história e uma ASCII gigantesca de um gato que parece muito o gato de cheshire.</p>
+<p>No <strong>big_cat_7.png</strong> não havia nada. No hints, uma imagem que tinha sua origem a página de <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher">Vigenère</a>, que é um método de encriptação baseado em uma chave. A chave está na história, bem simples.</p>
+<p>Fiz um scriptzinho em python super simples pra aplicar na ascii art, que era gigantesca. O efeito foi bem legal, comparar os dois arquivos visualmente, a resposta no minimap do vscode fica mt mais nítida, e então encontramos o link pro próximo gato!</p>
+<h2 id="six_heartspng">six_hearts.png</h2>
+<p>Não achei nada nos arquivos <strong>cheshire.png</strong> ou <strong>six_hearts.png</strong>, mas havia algo cifrado no HTML da página.</p>
+<p>Não era césar, a key não funcionou, depois de uma pesquisa descobri que poderia ser uma cifra de substituição monoalfabética, que basicamente é manualmente escolher letras para virarem outras. Por ex: se <code>B = Q, O = W, L = E</code>, <code>LOBO BOBO</code> vira <code>EWQW QWQW</code>.</p>
+<p>Claro que fazer isso manualmente é uma loucurada que só, encontrei um site que faz brute <a href="https://www.guballa.de/substitution-solver">force aqui</a>. Ele usa um dicionario pra fazer assimilações e decriptar o texto. Achamos o link do próximo puzzle.</p>
+<h2 id="big_cat_5png">big_cat_5.png</h2>
+<p>Nada na imagem, um link para um arquivo <code>.pcapng</code>, que descobri que é basicamente um log de tráfego de rede, se eu entendi certo. Usei o <strong>wireshark</strong> para ler, não sei se era a melhor opção ou não, mas deu conta do recado.</p>
+<p>No log basicamente é um chat entre dois gatos, e a lore desse puzzle, e o link do próximo puzzle. Nada escondido, diria que esse foi puramente lore dump.</p>
+<h2 id="big_cat_4png">big_cat_4.png</h2>
+<p><strong>Coming soon</strong>.</p>
+<p>Bom, o puzzle ainda não está completo e tem mais pela frente, mas ainda não saiu. Esse puzzlezinho me fez aprender várias coisas sobre criptografia, e me deu vontade de voltar a fazer CTFs.</p>
+<p>Queria que tivessem mais CTFs com lore interessante assim, no momento estou fazendo alguns do picoCTF.</p>
+<p>Tentei ao máximo não dar spoilers da história, mesmo falando como resolver acho que é legal ver por conta!</p>
+<h2 id="nada-a-ver-com-os-puzzles">Nada a ver com os puzzles</h2>
+<p>Obrigada a todos que leram, ultimamente não tenho tido muito tempo/cabeça para fazer posts, tenho uns 5 rascunhos que escrevo enquanto mexo em projetos pessoais, mas até terminar os projetos em si não acho que eles vão pro forno. :p</p>
+<p>E estou com outros projetos em mente, mas espero que ainda esse ano saia alguma &lsquo;parte 2&rsquo; de um dos projetos que já fiz post aqui.</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Data Lake com estatísticas do Last.fm</title>
       <link>https://cheshireviolet.github.io/blog/lastfm/</link>
