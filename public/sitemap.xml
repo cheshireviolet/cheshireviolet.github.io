@@ -3,10 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://cheshireviolet.github.io/</loc>
-    <lastmod>2025-10-05T22:07:02-03:00</lastmod>
+    <lastmod>2026-01-05T20:00:51-03:00</lastmod>
   </url><url>
     <loc>https://cheshireviolet.github.io/blog/</loc>
-    <lastmod>2025-10-05T22:07:02-03:00</lastmod>
+    <lastmod>2026-01-05T20:00:51-03:00</lastmod>
+  </url><url>
+    <loc>https://cheshireviolet.github.io/blog/newyear/</loc>
+    <lastmod>2026-01-05T20:00:51-03:00</lastmod>
+  </url><url>
+    <loc>https://cheshireviolet.github.io/tags/personal/</loc>
+    <lastmod>2026-01-05T20:00:51-03:00</lastmod>
+  </url><url>
+    <loc>https://cheshireviolet.github.io/tags/</loc>
+    <lastmod>2026-01-05T20:00:51-03:00</lastmod>
   </url><url>
     <loc>https://cheshireviolet.github.io/tags/cryptography/</loc>
     <lastmod>2025-10-05T22:07:02-03:00</lastmod>
@@ -18,9 +27,6 @@
     <lastmod>2025-10-05T22:07:02-03:00</lastmod>
   </url><url>
     <loc>https://cheshireviolet.github.io/tags/steganography/</loc>
-    <lastmod>2025-10-05T22:07:02-03:00</lastmod>
-  </url><url>
-    <loc>https://cheshireviolet.github.io/tags/</loc>
     <lastmod>2025-10-05T22:07:02-03:00</lastmod>
   </url><url>
     <loc>https://cheshireviolet.github.io/blog/ohno/</loc>
@@ -60,9 +66,6 @@
     <lastmod>2025-02-25T16:50:27-03:00</lastmod>
   </url><url>
     <loc>https://cheshireviolet.github.io/blog/fourth/</loc>
-    <lastmod>2025-01-10T00:55:51-03:00</lastmod>
-  </url><url>
-    <loc>https://cheshireviolet.github.io/tags/personal/</loc>
     <lastmod>2025-01-10T00:55:51-03:00</lastmod>
   </url><url>
     <loc>https://cheshireviolet.github.io/blog/third/</loc>

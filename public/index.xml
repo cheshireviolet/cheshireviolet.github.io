@@ -6,8 +6,84 @@
     <description>Recent content on violeta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 05 Oct 2025 22:07:02 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 05 Jan 2026 20:00:51 -0300</lastBuildDate>
     <atom:link href="https://cheshireviolet.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arrumando a Bagunça dos Projetos</title>
+      <link>https://cheshireviolet.github.io/blog/newyear/</link>
+      <pubDate>Mon, 05 Jan 2026 20:00:51 -0300</pubDate>
+      <guid>https://cheshireviolet.github.io/blog/newyear/</guid>
+      <description>&lt;p&gt;Olá amigos, tudo bem? Feliz ano novo, espero que tenha ocorrido tudo bem nessa virada, 2026 já começou turbulentissimo mas no fim do dia seguimos nossas pequenas vidinhas.&lt;/p&gt;&#xA;&lt;p&gt;Não era uma promessa para o ano nem nada, mas resolvi dar uma limpa no dropbox, mais especificamente na parte de projetos relacionados a programação. Apesar de não postá-los aqui, tem pelo menos uns 10 posts nos rascunhos de projetos que comecei (e nunca terminei), alguns projetos que não eram grandes o bastante pra render um post, continuação de outros projetos, enfim.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Olá amigos, tudo bem? Feliz ano novo, espero que tenha ocorrido tudo bem nessa virada, 2026 já começou turbulentissimo mas no fim do dia seguimos nossas pequenas vidinhas.</p>
+<p>Não era uma promessa para o ano nem nada, mas resolvi dar uma limpa no dropbox, mais especificamente na parte de projetos relacionados a programação. Apesar de não postá-los aqui, tem pelo menos uns 10 posts nos rascunhos de projetos que comecei (e nunca terminei), alguns projetos que não eram grandes o bastante pra render um post, continuação de outros projetos, enfim.</p>
+<p>Esse post vai ser um adeus para vários deles, com resumos e coisas <strong>possivelmente</strong> legais sobre.</p>
+<h2 id="projetos-com-posts-de-blog-salvo-nos-rascunhos">Projetos com posts de blog salvo nos rascunhos</h2>
+<h3 id="provando-a-teoria-do-warren-buffet-de-tempo-no-mercado">Provando a teoria do Warren Buffet de tempo no Mercado</h3>
+<p>Esse é um projeto que não era complicado, mas precisaria precisa de certa manutenção.</p>
+<p>Um dos caras que ficou bizentonario com investimentos foi o Warren Buffet, que diz que <strong>&ldquo;Time in the market &gt; Timing the market&rdquo;</strong>, investir a longo prazo vai ser sempre mais rentável do que investir na hora certa nos ativos certos.</p>
+<p>Tem uma história sobre uma certa aposta e basicamente se comprasse uma % de todos os ativos da bolsa baseado no tamanho deles no mercado, essa carteira hipotetica venceria de qualquer stock picking a longo prazo.</p>
+<p>Na época, peguei todos os tickers da bolsa brasileira e então fiz web scraping no investidor10 para pegar o Valor Patrimonial, Número de papéis e valor de mercado do dia. A ideia seria acompanhar esses números (e dividendos) com o passar do tempo e ver a progressão da carteira. Fiquei com preguiça, mas foi legalzinho.</p>
+<h3 id="project-mono-pt2">Project Mono Pt2</h3>
+<p>Uma das coisas que mudou esse ano foi o meu sistema operacional de preferência, migrei 100% pro linux, logo sem acesso ao .net perdi minha interface bonitinha em WPF e fiquei com preguiça de fazer algo novo. Ironicamente provavelmente é mais fácil fazer isso funcionar direito no linux, enfim.</p>
+<h3 id="slay-the-spire-pt2">Slay the Spire Pt2</h3>
+<p>A parte boa é que eu tenho um backup de algumas coisas, a parte ruim é que o histórico de run não fica salvo na nuvem da steam. Perdi a motivação, mas a pt2 estava quase pronta, talvez eu poste no futuro!</p>
+<h2 id="projetos-que-tem-pasta-própria">Projetos que tem pasta própria</h2>
+<p>Sim, isso é um critério pro projeto não ser &ldquo;tão pequeno&rdquo;.</p>
+<h3 id="img2video">Img2Video</h3>
+<p>Projeto que eu fiz pra minha mãe há uns 8~10 anos atrás. Pega várias imagens usando ffmpeg e converte em um video. Tem opção de adicionar legenda e música de fundo. Mega simples, tá no meu github, lol.</p>
+<h3 id="macrohelper">MacroHelper</h3>
+<p>Nem lembrava desse, era um gerador de macro de AHK, projeto besta salvar tempo pra salvar tempo. Nem sei se tem AHK no linux mas hoje em dia sou mais tryhard com automações (em partes porque trabalho com isso).</p>
+<h3 id="image-simplification">Image Simplification</h3>
+<p>Projeto rapido pra um bootcamp que deixa uma imagem colorida em grayscale, pela emoção fiz mudar vários pixels por vez como uma animaçãozinha pra ficar legal. Mas foi extremamente simples</p>
+<h3 id="lastfm">Last.fm</h3>
+<p>Já tem um post sobre, pretendo continuar o projeto no futuro, mas no momento preguicinha.</p>
+<h3 id="magicat-route-analyzer">MagiCat Route Analyzer</h3>
+<p>Lá por 2018~2020 eu fazia speedruns, um desses jogos se chamava MagiCat. é um platformer que você pode escolher as fases que vai, comprando itens que permitem pular estágios e coisas assim. A rota de Any% não era (e potencialmente ainda não é, ninguém jogou muito esse jogo além de mim e um japonês muito foda) optimizada, então na época eu peguei dados de tempo de fase considerando pegar certos itens pra tentar otimizar runs. Projeto legal, hoje em dia eu faria MUITO melhor.</p>
+<h3 id="infernoble-knights-yu-gi-oh-1">Infernoble Knights (Yu-Gi-Oh! 1)</h3>
+<p>Gosto de estudar decklists diversas de pessoas bem sucedidas com baralhos que quero aprender. Na época tava afim de aprender Infernoble, que são os cavaleiros Yaoi e sua princesa Fujoshi. O programa fazia Web Scraping do Master Duel Meta (não tem muito como achar boas decklists de infernoble, no MDM pelo menos a galera pegou rank bom com o deck) fazendo comparativos de decisões de tech para entender porque usar ou não usar certa carta ou combinações de carta.</p>
+<p>Isso sempre ajuda e eu sempre fiz manualmente, foi fácil mas bem divertido!</p>
+<h3 id="yu-gi-oh-2">Yu-Gi-Oh! 2</h3>
+<p>Usando a api do tcg player peguei dados de todas as cartas do jogo, pra um possivel projeto futuro que ainda não desisti! Novidades em breve (talvez)</p>
+<h3 id="yu-gi-oh-3">Yu-Gi-Oh! 3</h3>
+<p>Se você acompanha o r/masterduel vai perceber que o chapéu de alumínio é super popular por lá, principalmente sobre o resultado da moeda (que decide quem joga primeiro) e a mão inicial.</p>
+<p>O projeto usaria Pytesseract pra anotar automaticamente as minhas mãos iniciais e moedas pra gerar dados.</p>
+<p>É MUITO CHATO FAZER ISSO ENTÃO DESISTI. (além disso, tem métodos melhores do que pytesseract, já que o jogo é em Unity e dá pra fazer dll injection porque usa mono hihi)</p>
+<h3 id="peixes">Peixes</h3>
+<p>Só pra não deixar batido, uma colega e eu tivemos essa ideia que envolve ter uma base de peixes brasileiros e fotos deles. Não está morto mas não estou fazendo nada com isso no momento. NÃO IRÁ MORRER</p>
+<h2 id="jogos">Jogos</h2>
+<h3 id="choncho-adventure">Choncho Adventure</h3>
+<p>Meu anjo querido me perdoe eu não quero mais continuar a pixel art do jogo então desisti na metade (protótipo nem ficou pronto).</p>
+<p>Também tem o negócio aonde eu não sabia se queria transformar em um roguelike ou um joguinho de arcade. Talvez reviva pra alguma jam, usando Godot.</p>
+<h3 id="project-box">Project Box</h3>
+<p>Esse joguinho tem potencial mas não mexi em quase nada nele. Incrementalzinho besta que também não desisti</p>
+<h3 id="momo-adventure">Momo Adventure</h3>
+<p>Fiz pra uma entrevista que seria para ensinar programação para crianças. Fui forçada a usar PyGameZero. Espero nunca mais ter que usar isso.</p>
+<h3 id="pseudoclicker">Pseudoclicker</h3>
+<p>Originalmente ia ser meu projeto pra gamejam de 20 segundos, mas acabei desistindo porque não era divertido.</p>
+<p>Era um clicker, mas você podia fazer combos, usar outros botões, segurar o botão, etc. Teria um sistema de progressão meio de RPG, classes, etc.</p>
+<p>Mas não era divertido então xauuuu</p>
+<h3 id="tamagochi-match-3">Tamagochi Match-3</h3>
+<p>Sinceramente eu não lembro de nada a respeito, além de ser um tamagochi com match-3 envolvido. Era incremental?? Talvez???</p>
+<p>Talvez faça um tamagochizinho no futuro mas não vai ser nada a ver com isso aí</p>
+<h3 id="mind-defrag">Mind Defrag</h3>
+<p>Esse projeto aqui é brabo, estava usando sadconsole+monogame pra fazer esse joguinho de texto super inspirado em Severance. Scope Creep me destruiu mas talvez eu volte</p>
+<h2 id="projetos-pequenos">Projetos pequenos</h2>
+<p>Metade está em uma pasta &ldquo;outros&rdquo; e a outra metade em uma pasta &ldquo;small stuff&rdquo;. NÃO SEI DIZER A DIFERENÇA. ORGNIZAÇÃO NOTA 10</p>
+<h3 id="bruteforcepy--diarypy">bruteforce.py / diary.py</h3>
+<p>Dois scriptzinhos pra CTFs!</p>
+<h3 id="tatipy">tati.py</h3>
+<p>Plotei uns gráficos, não lembro o porquê.</p>
+<h3 id="risospy">risos.py</h3>
+<p>Tava tentando burlar um app aí&hellip;Merecia o próprio blog post mas não funciona no linux então nem tenho como fazer mais isso</p>
+<h3 id="nloth-x-question-cardpy">nloth x question card.py</h3>
+<p>No Slay the Spire após cada batalha você pode escolher entre 3 cartas. Elas tem raridades diferentes. Queria testar as % de vir cartas melhores usando reliquias diferentes que alteram essas chances. Foi legal, rapidinho e direto.</p>
+<h3 id="palindromopy">palindromo.py</h3>
+<p>Verifica se uma frase é palindromo. Eu faço Palindromos.</p>
+<h2 id="conclusão">Conclusão</h2>
+<p>No final das contas acabei deletando quase nada, mas dei uma microlimpa e surgiu esse postzinho engraçado.</p>
+<p>Até a próxima!</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Um blog no neocities me fez voltar a fazer ctfs</title>
       <link>https://cheshireviolet.github.io/blog/ohno/</link>
