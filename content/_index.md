@@ -16,6 +16,6 @@ Meu nome é Cecília, tenho 30 anos (e vou esquecer de atualizar a idade ano que
 
 [Aqui](https://cheshireviolet.github.io/blog) você pode ver meus posts sobre [projetos](https://github.com/cheshireviolet) e estudos relacionados a programação.
 
-[Aqui](https://https://ccchesh.itch.io/) estão meus joguinhos de jam, protótipos de demos.
+[Aqui](https://https://ccchesh.itch.io/) estão meus joguinhos de jam, protótipos e demos.
 
 Meu [Soundcloud](https://soundcloud.com/ccchesh), caso tenha interesse em breakcore e música experimental.
