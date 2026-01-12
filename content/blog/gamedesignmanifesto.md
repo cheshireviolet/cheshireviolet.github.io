@@ -1,7 +1,7 @@
 +++
 date = '2026-01-12T13:49:21-03:00'
 draft = false
-title = 'Gamedesignmanifesto'
+title = 'Game Design Manifesto'
 tags = ['Game Design']
 +++
 
