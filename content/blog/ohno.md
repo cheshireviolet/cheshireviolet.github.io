@@ -2,7 +2,7 @@
 date = '2025-10-05T22:07:02-03:00'
 draft = false
 title = 'Um blog no neocities me fez voltar a fazer ctfs'
-tags = ['CTF', 'cryptography', 'steganography', 'forensics']
+tags = ['CTF']
 +++
 
 Bom dia amigos! Minha marida há algum tempo resolveu aprender HTML/CSS/JS e acabou descobrindo o incrível mundo do neocities! 

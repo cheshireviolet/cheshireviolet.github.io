@@ -2,7 +2,7 @@
 date = '2025-05-21T18:35:34-03:00'
 draft = false
 title = 'Data Lake com estatísticas do Last.fm'
-tags = ['Python', 'Data Analysis']
+tags = ['Data Analysis']
 +++
 
 Bom dia amigos! Fazia tempo que não postava nada. Últimos 2 meses foram extremamente corridos, muita bagunça e adversidades, mas consegui fazer algo a tempo de manter 1 post por mês.

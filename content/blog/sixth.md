@@ -2,7 +2,7 @@
 date = '2025-03-04T18:25:36-03:00'
 draft = false
 title = 'Slay the Spire e Análise de Dados - Parte 1'
-tags = ['Python', 'Data Analysis', 'Slay the Spire']
+tags = ['Data Analysis']
 +++
 
 Bom dia amigos! Novamente, eu devia escrever o primeiro DevLog do Choncho Adventure, mas novamente me peguei em uma situação aonde estou mexendo em **outro projeto**.

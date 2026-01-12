@@ -2,7 +2,7 @@
 date = '2025-03-13T18:14:35-03:00'
 draft = true
 title = 'Slay the Spire e Análise de Dados - Parte 2'
-tags = ['Python', 'Data Analysis', 'Slay the Spire']
+tags = ['Data Analysis']
 +++
 
 Bom dia amigos! Aqui vou revelar um segredo: Tenho vários rascunhos com posts pela metade, sobre as coisas que estou fazendo. Escrever sobre o que motiva no momento faz mais sentido na minha cabeça, mesmo que fosse possível finalizar e postar sobre outros assuntos.

@@ -6,21 +6,21 @@
     <description>Recent content in Tags on violeta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Mon, 05 Jan 2026 20:00:51 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 12 Jan 2026 13:49:21 -0300</lastBuildDate>
     <atom:link href="https://cheshireviolet.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Game Design</title>
+      <link>https://cheshireviolet.github.io/tags/game-design/</link>
+      <pubDate>Mon, 12 Jan 2026 13:49:21 -0300</pubDate>
+      <guid>https://cheshireviolet.github.io/tags/game-design/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
     <item>
       <title>Personal</title>
       <link>https://cheshireviolet.github.io/tags/personal/</link>
       <pubDate>Mon, 05 Jan 2026 20:00:51 -0300</pubDate>
       <guid>https://cheshireviolet.github.io/tags/personal/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    <item>
-      <title>Cryptography</title>
-      <link>https://cheshireviolet.github.io/tags/cryptography/</link>
-      <pubDate>Sun, 05 Oct 2025 22:07:02 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/tags/cryptography/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
@@ -33,22 +33,6 @@
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     <item>
-      <title>Forensics</title>
-      <link>https://cheshireviolet.github.io/tags/forensics/</link>
-      <pubDate>Sun, 05 Oct 2025 22:07:02 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/tags/forensics/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    <item>
-      <title>Steganography</title>
-      <link>https://cheshireviolet.github.io/tags/steganography/</link>
-      <pubDate>Sun, 05 Oct 2025 22:07:02 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/tags/steganography/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    <item>
       <title>Data Analysis</title>
       <link>https://cheshireviolet.github.io/tags/data-analysis/</link>
       <pubDate>Wed, 21 May 2025 18:35:34 -0300</pubDate>
@@ -57,42 +41,10 @@
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     <item>
-      <title>Python</title>
-      <link>https://cheshireviolet.github.io/tags/python/</link>
-      <pubDate>Wed, 21 May 2025 18:35:34 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/tags/python/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    <item>
-      <title>Code Obfuscation</title>
-      <link>https://cheshireviolet.github.io/tags/code-obfuscation/</link>
-      <pubDate>Tue, 01 Apr 2025 14:13:08 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/tags/code-obfuscation/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    <item>
       <title>Silly</title>
       <link>https://cheshireviolet.github.io/tags/silly/</link>
       <pubDate>Tue, 01 Apr 2025 14:13:08 -0300</pubDate>
       <guid>https://cheshireviolet.github.io/tags/silly/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    <item>
-      <title>Slay the Spire</title>
-      <link>https://cheshireviolet.github.io/tags/slay-the-spire/</link>
-      <pubDate>Tue, 04 Mar 2025 18:25:36 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/tags/slay-the-spire/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    <item>
-      <title>Project Mono</title>
-      <link>https://cheshireviolet.github.io/tags/project-mono/</link>
-      <pubDate>Tue, 25 Feb 2025 16:50:27 -0300</pubDate>
-      <guid>https://cheshireviolet.github.io/tags/project-mono/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>

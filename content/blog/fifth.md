@@ -2,7 +2,7 @@
 date = '2025-02-25T16:50:27-03:00'
 draft = false
 title = 'Project Mono Parte 1 - Fiquei Maluca'
-tags = ['Reverse Engineering', 'Project Mono']
+tags = ['Reverse Engineering']
 +++
 
 Bom dia amigos, espero que todos estejam bem! Estive trabalhando no Choncho Adventure enquanto aprendo Pixel Art, fazendo entrevistas de emprego e tentando relaxar. Passei em uma vaga de dados, começo mês que vem! Ai que saudades de um excelzinho!
